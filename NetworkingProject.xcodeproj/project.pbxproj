@@ -54,17 +54,48 @@
 		05087FBF26B0B993004B837F /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				05B9E81226AF18CC00105F8C /* MenuViewController.swift */,
 				05A64C7026B3279E005CD0BF /* DetailsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0534CA272714F1D0009A0654 /* MainModule */ = {
+			isa = PBXGroup;
+			children = (
+				0534CA2A2714F1F2009A0654 /* Model */,
+				0534CA282714F1E9009A0654 /* View */,
+				0534CA2B2714F1FA009A0654 /* ViewModel */,
+			);
+			path = MainModule;
+			sourceTree = "<group>";
+		};
+		0534CA282714F1E9009A0654 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				05B9E81226AF18CC00105F8C /* MenuViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0534CA2A2714F1F2009A0654 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0589837126B09BFD00BF8BE1 /* MovieData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0534CA2B2714F1FA009A0654 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewModel;
 			sourceTree = "<group>";
 		};
 		0589836F26B095F600BF8BE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				059AE00B26B44DC6006B76E1 /* MovieDetails.swift */,
-				0589837126B09BFD00BF8BE1 /* MovieData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -101,6 +132,7 @@
 				05B9E80E26AF18CC00105F8C /* AppDelegate.swift */,
 				05B9E81026AF18CC00105F8C /* SceneDelegate.swift */,
 				059AE00F26B4892C006B76E1 /* MoviesManager.swift */,
+				0534CA272714F1D0009A0654 /* MainModule */,
 				059A911626B1712E00FF27E9 /* TableViewCell */,
 				05087FBF26B0B993004B837F /* ViewController */,
 				0589836F26B095F600BF8BE1 /* Model */,
