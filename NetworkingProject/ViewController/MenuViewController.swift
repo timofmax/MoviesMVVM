@@ -83,11 +83,11 @@ final class MenuViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension MenuViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         moviesList.count
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = moviesTableView.dequeueReusableCell(
             withIdentifier: "myCell",
             for: indexPath
@@ -101,11 +101,11 @@ extension MenuViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension MenuViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         300
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let withDetailViewController = DetailsViewController()
         withDetailViewController.id = moviesList[indexPath.row].id
         navigationController?.pushViewController(withDetailViewController, animated: true)

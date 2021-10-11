@@ -95,11 +95,11 @@ final class DetailsViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension DetailsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         2
     }
 
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.row {
         case 0:
             guard let cell = detailsTableView
@@ -122,7 +122,7 @@ extension DetailsViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension DetailsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         300
     }
 }

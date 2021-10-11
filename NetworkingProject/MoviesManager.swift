@@ -36,7 +36,7 @@ struct MoviesManager {
         }
     }
 
-    private func parseJSON(dataMovie: Data) {
+    private func parseJSON(dataMovie _: Data) {
         let decoder = JSONDecoder()
         do {
             decoder.keyDecodingStrategy = .convertFromSnakeCase
