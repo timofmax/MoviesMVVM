@@ -6,9 +6,7 @@
 // Testing git stash!
 
 import Foundation
-import UIKit
-//Here is lol
-//stash@{3}
+
 protocol MainScreenViewModelProtocol {
     func getData()
     var movies: [Movie] { get set }
