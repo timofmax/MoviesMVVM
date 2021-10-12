@@ -320,3 +320,9 @@ custom_rules:
     regex: "\\n\\n(public|open|struct|class|enum) (?!\\w+_Previews)"
     message: "Добавьте документацию через комбинацию клавиш CMD+OPTION+/"
     severity: error
+
+  custom_guard_inline:
+    name: "пиши гвард лет pizdec в 1 строку"
+    regex: "guard let pizdec\\n"
+    message: "Пиши @objc в одну строку"
+    severity: error
