@@ -4,7 +4,7 @@
 import Foundation
 import UIKit
 
-/// Some Movies
+// Some Movies
 struct MoviesManager {
     // MARK: - Private Properties
 
@@ -53,7 +53,6 @@ struct MoviesManager {
                 }
                 if response != nil {}
             }
-            // Start job
             task.resume()
         }
     }
