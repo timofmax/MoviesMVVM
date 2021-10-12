@@ -4,11 +4,11 @@
 import UIKit
 
 /// MEGA documentation
-final class MenuViewController: UIViewController {
+final class MainViewController: UIViewController {
     // MARK: - Private Properties
 
     private var getMovie = MoviesManager()
-    private var moviesList: [Result] = []
+    private var moviesList: [Movie] = []
     private let moviesTableView = UITableView()
     private let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
 
@@ -62,13 +62,13 @@ final class MenuViewController: UIViewController {
     private func fetchMovies() {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let cats =
+        let urlMovie =
             "https://api.themoviedb.org/3/movie/top_rated?api_key=3227cbb07711665d37db3b97df155838&language=en-US&page=1#"
-        guard let url = URL(string: cats) else { return }
+        guard let url = URL(string: urlMovie) else { return }
         URLSession.shared.dataTask(with: url) { [self] data, _, error in
             guard let data = data else { return }
             do {
-                let mv = try decoder.decode(MoviesFavorite.self, from: data)
+                let mv = try decoder.decode(IncomingJson.self, from: data)
                 self.moviesList = mv.results
                 DispatchQueue.main.async {
                     self.moviesTableView.reloadData()
@@ -82,7 +82,7 @@ final class MenuViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension MenuViewController: UITableViewDataSource {
+extension MainViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         moviesList.count
     }
@@ -100,7 +100,7 @@ extension MenuViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension MenuViewController: UITableViewDelegate {
+extension MainViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         300
     }

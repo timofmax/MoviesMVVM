@@ -3,13 +3,20 @@
 
 import Foundation
 
-/// MoviesFavorite
-struct MoviesFavorite: Decodable {
-    let results: [Result]
+/// ViewData
+enum ViewData {
+    case loading
+    case loaded([Movie])
+    case failure(description: String?, onReload: () -> ())
 }
 
 /// MoviesFavorite
-struct Result: Decodable {
+struct IncomingJson: Decodable {
+    let results: [Movie]
+}
+
+/// MoviesFavorite
+struct Movie: Decodable {
     let adult: Bool
     let overview: String
     let posterPath: String

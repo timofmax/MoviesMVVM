@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo _: UISceneSession,
         options _: UIScene.ConnectionOptions
     ) {
-        let viewControler = MenuViewController()
+        let viewControler = MainViewController()
         let navController = UINavigationController(rootViewController: viewControler)
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
