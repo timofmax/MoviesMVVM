@@ -7,11 +7,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
-    func scene(
-        _: UIScene,
-        willConnectTo _: UISceneSession,
-        options _: UIScene.ConnectionOptions
-    ) {
+    func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
@@ -21,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainScreenViewModel = MainScreenViewModel()
         viewControler.mainViewModel = mainScreenViewModel
         navController.viewControllers = [viewControler]
-        navController.navigationBar.isHidden = true
+        navController.navigationBar.isHidden = false
 
         window.rootViewController = navController
         window.makeKeyAndVisible()
