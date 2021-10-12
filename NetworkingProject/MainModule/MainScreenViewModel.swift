@@ -7,8 +7,8 @@
 
 import Foundation
 import UIKit
-//Here is stash testing - no worries
-
+//Here is lol
+//stash@{3}
 protocol MainScreenViewModelProtocol {
     func getData()
     var movies: [Movie] { get set }
