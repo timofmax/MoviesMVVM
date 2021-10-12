@@ -12,7 +12,7 @@
 		0589837226B09BFD00BF8BE1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589837126B09BFD00BF8BE1 /* Movie.swift */; };
 		059A911826B1716400FF27E9 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A911726B1716400FF27E9 /* MovieTableViewCell.swift */; };
 		059AE00C26B44DC7006B76E1 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AE00B26B44DC6006B76E1 /* MovieDetails.swift */; };
-		059AE01026B4892C006B76E1 /* MoviesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AE00F26B4892C006B76E1 /* MoviesManager.swift */; };
+		059AE01026B4892C006B76E1 /* MoviAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AE00F26B4892C006B76E1 /* MoviAPIService.swift */; };
 		05A64C7126B3279E005CD0BF /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A64C7026B3279E005CD0BF /* DetailsViewController.swift */; };
 		05A64C7626B33085005CD0BF /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A64C7526B33085005CD0BF /* DetailsTableViewCell.swift */; };
 		05A64C7926B33C6E005CD0BF /* SpecificDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05A64C7826B33C6E005CD0BF /* SpecificDetailsTableViewCell.swift */; };
@@ -30,7 +30,7 @@
 		0589837126B09BFD00BF8BE1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		059A911726B1716400FF27E9 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		059AE00B26B44DC6006B76E1 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
-		059AE00F26B4892C006B76E1 /* MoviesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesManager.swift; sourceTree = "<group>"; };
+		059AE00F26B4892C006B76E1 /* MoviAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviAPIService.swift; sourceTree = "<group>"; };
 		05A64C7026B3279E005CD0BF /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		05A64C7526B33085005CD0BF /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		05A64C7826B33C6E005CD0BF /* SpecificDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificDetailsTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,6 +79,22 @@
 				0518730F2716081100F5F339 /* DetailScreenViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		051873122716089400F5F339 /* ServiceLayer */ = {
+			isa = PBXGroup;
+			children = (
+				051873132716089F00F5F339 /* APIService */,
+			);
+			path = ServiceLayer;
+			sourceTree = "<group>";
+		};
+		051873132716089F00F5F339 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				059AE00F26B4892C006B76E1 /* MoviAPIService.swift */,
+			);
+			path = APIService;
 			sourceTree = "<group>";
 		};
 		0534CA272714F1D0009A0654 /* MainModule */ = {
@@ -154,7 +170,7 @@
 			children = (
 				05B9E80E26AF18CC00105F8C /* AppDelegate.swift */,
 				05B9E81026AF18CC00105F8C /* SceneDelegate.swift */,
-				059AE00F26B4892C006B76E1 /* MoviesManager.swift */,
+				051873122716089400F5F339 /* ServiceLayer */,
 				0534CA272714F1D0009A0654 /* MainModule */,
 				059A911626B1712E00FF27E9 /* TableViewCell */,
 				0518730C271607D700F5F339 /* DetailModule */,
@@ -277,7 +293,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				059AE01026B4892C006B76E1 /* MoviesManager.swift in Sources */,
+				059AE01026B4892C006B76E1 /* MoviAPIService.swift in Sources */,
 				05B9E81326AF18CC00105F8C /* MainViewController.swift in Sources */,
 				05A64C7926B33C6E005CD0BF /* SpecificDetailsTableViewCell.swift in Sources */,
 				05B9E80F26AF18CC00105F8C /* AppDelegate.swift in Sources */,

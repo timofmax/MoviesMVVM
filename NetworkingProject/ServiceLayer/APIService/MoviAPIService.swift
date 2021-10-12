@@ -5,7 +5,7 @@ import Foundation
 import UIKit
 
 // Some Movies
-struct MoviesManager {
+struct MoviAPIService {
     // MARK: - Private Properties
 
     private let urlString = "https://api.themoviedb.org/3/movie/550?api_key=3227cbb07711665d37db3b97df155838"
@@ -68,5 +68,5 @@ struct MoviesManager {
 }
 
 protocol MoviesMangerDelegate: AnyObject {
-    func getMovieList(movie: MoviesManager)
+    func getMovieList(movie: MoviAPIService)
 }
