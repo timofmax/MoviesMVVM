@@ -21,6 +21,7 @@ opt_in_rules:
   - sorted_imports
   - unneeded_parentheses_in_closure_argument
 
+
 excluded:
   - Pods
 
@@ -119,14 +120,6 @@ custom_rules:
     name: "Неверное использование guard let self = self"
     regex: "guard\\s+let\\s+(((?!self).)\\S* = self[ ,]|`self` = self)"
     message: "Используй 'guard let self = self'"
-    severity: error
-
-  custom_void_return:
-    name: "Неверное использование Void"
-    regex: "([(](Void)?[)] ?-> ?Void)"
-    match_kinds:
-      - typeidentifier
-    message: "Используй '() -> ()'"
     severity: error
 
   custom_guard_self:

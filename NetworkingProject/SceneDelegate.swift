@@ -12,9 +12,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         willConnectTo _: UISceneSession,
         options _: UIScene.ConnectionOptions
     ) {
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        self.window = window
+
+        let navController = UINavigationController()
         let viewControler = MainViewController()
-        let navController = UINavigationController(rootViewController: viewControler)
-        window?.rootViewController = navController
-        window?.makeKeyAndVisible()
+        let mainScreenViewModel = MainScreenViewModel()
+        viewControler.mainViewModel = mainScreenViewModel
+        navController.viewControllers = [viewControler]
+        navController.navigationBar.isHidden = true
+
+        window.rootViewController = navController
+        window.makeKeyAndVisible()
     }
 }
