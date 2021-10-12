@@ -6,7 +6,7 @@ import UIKit
 /// MEGA documentation
 final class MainViewController: UIViewController {
     // MARK: - Public Properties
-//    var mainViewModel = MainScreenViewModel()
+    
     var mainViewModel: MainScreenViewModelProtocol!
 
     // MARK: - Private Properties
