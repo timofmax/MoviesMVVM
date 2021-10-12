@@ -21,6 +21,7 @@ final class MainViewController: UIViewController {
         moviesTableView.delegate = self
         moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "myCell")
         setView()
+        updateViewController()
         mainViewModel.getData()
     }
 
@@ -33,6 +34,14 @@ final class MainViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = attributes
         title = "Movies"
         createTableView()
+    }
+
+    private func updateViewController() {
+        mainViewModel.updateView = {
+            DispatchQueue.main.async {
+                self.moviesTableView.reloadData()
+            }
+        }
     }
 
     private func createTableView() {
