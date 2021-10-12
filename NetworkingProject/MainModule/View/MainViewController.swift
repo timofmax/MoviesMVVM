@@ -53,22 +53,6 @@ final class MainViewController: UIViewController {
         moviesTableView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
         moviesTableView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
     }
-
-    private func configureCell(cell: MovieTableViewCell, indexPath: IndexPath) {
-        cell.backgroundColor = .black
-        if mainViewModel.movies.isEmpty {
-            return
-        }
-        let backColorView = UIView()
-        backColorView.backgroundColor = .clear
-        cell.selectedBackgroundView = backColorView
-        cell.overviewLabel.text = mainViewModel.movies[indexPath.row].overview
-        cell.titleMovieLabel.text = mainViewModel.movies[indexPath.row].title
-        cell.ratingLabel.text = "\(mainViewModel.movies[indexPath.row].voteAverage) ⭐️"
-        guard let url = URL(string: basePosterUrlString + mainViewModel.movies[indexPath.row].posterPath) else { return }
-        guard let imageData = try? Data(contentsOf: url) else { return }
-        cell.posterImageView.image = UIImage(data: imageData)
-    }
 }
 
 // MARK: - UITableViewDataSource
@@ -84,7 +68,9 @@ extension MainViewController: UITableViewDataSource {
             for: indexPath
         ) as? MovieTableViewCell
         else { return UITableViewCell() }
-        configureCell(cell: cell, indexPath: indexPath)
+        cell.backgroundColor = .black
+        let moviesList = mainViewModel.movies
+        cell.configCell(movie: moviesList[indexPath.row])
         return cell
     }
 }

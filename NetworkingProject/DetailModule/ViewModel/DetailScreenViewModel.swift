@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+protocol DetailScreenViewModelProtocol {
+    func getData()
+    var movies: [Movie] { get set }
+    var updateView: (() -> ())? { get set }
+}
+
+//final class DetailViewModel: DetailScreenViewModelProtocol {
+//    func getData() {
+//        <#code#>
+//    }
+//
+//    var movies: [Movie]
+//
+//    var updateView: (() -> ())?
+//
+//
+//}
