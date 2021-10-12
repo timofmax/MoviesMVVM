@@ -22,7 +22,7 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
         fetMovies()
     }
 
-    func fetMovies() {
+    private func fetMovies() {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let urlMovie =
