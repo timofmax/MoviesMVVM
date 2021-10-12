@@ -15,12 +15,8 @@ protocol DetailScreenViewModelProtocol {
 
 //final class DetailViewModel: DetailScreenViewModelProtocol {
 //    func getData() {
-//        <#code#>
 //    }
 //
-//    var movies: [Movie]
-//
+//    var movies: [Movie]//
 //    var updateView: (() -> ())?
-//
-//
 //}
