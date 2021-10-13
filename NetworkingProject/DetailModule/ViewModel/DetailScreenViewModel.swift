@@ -14,6 +14,7 @@ protocol DetailScreenViewModelProtocol {
     var updateViewData: VoideHandler? { get set }
     func fetchMoviesFromViewModel(id: Int)
     var movieDetail: MovieDetails? { get set }
+    var id: Int { get set }
 }
 
 final class DetailViewModel: DetailScreenViewModelProtocol {
@@ -22,6 +23,11 @@ final class DetailViewModel: DetailScreenViewModelProtocol {
     var movies: ((MovieDetails?)->())?
     var updateViewData: (() -> ())?
     var movieAPIService: MovieAPIServiceProtocol = MovieAPIService()
+    var id: Int
+
+    init(movieID: Int) {
+        self.id = movieID
+    }
 
     //MARK: - Public Methods
     func fetchMoviesFromViewModel(id: Int) {

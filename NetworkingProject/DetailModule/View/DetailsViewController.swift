@@ -6,12 +6,12 @@ import UIKit
 /// DetailsViewController
 final class DetailsViewController: UIViewController {
     // MARK: - Public Properties
-    var id = Int()
+//    var id = Int()
     var movieDetail: MovieDetails?
     let detailsTableView = UITableView()
 
     // MARK: - Private Properties
-    private var viewModel: DetailScreenViewModelProtocol = DetailViewModel()
+    private var viewModel: DetailScreenViewModelProtocol?
     private let movieAPIService = MovieAPIService()
     // MARK: - Lifecycle methods
 
@@ -19,7 +19,14 @@ final class DetailsViewController: UIViewController {
         setView()
     }
 
+    // MARK: - Internal Methods
+
+    func setupViewModel(viewModel: DetailScreenViewModelProtocol) {
+        self.viewModel = viewModel
+    }
+
     // MARK: - Private Methods
+
 
     private func setView() {
         detailsTableView.delegate = self
@@ -28,7 +35,7 @@ final class DetailsViewController: UIViewController {
         detailsTableView.register(SpecificDetailsTableViewCell.self, forCellReuseIdentifier: "specificID")
         view.backgroundColor = .black
         createTable()
-        viewModel.fetchMoviesFromViewModel(id: id)
+        viewModel?.fetchMoviesFromViewModel(id: viewModel?.id ?? 0)
     }
 
     private func createTable() {
@@ -55,14 +62,14 @@ extension DetailsViewController: UITableViewDataSource {
             guard let cell = detailsTableView
                     .dequeueReusableCell(withIdentifier: "detailID", for: indexPath) as? DetailsTableViewCell
             else { return UITableViewCell() }
-            cell.configInCell(id: id)
+            cell.configInCell(id: viewModel?.id ?? 0)
             return cell
         case 1:
         super.viewDidLoad()
             guard let cell = detailsTableView
                     .dequeueReusableCell(withIdentifier: "specificID", for: indexPath) as? SpecificDetailsTableViewCell
             else { return UITableViewCell() }
-            self.movieDetail = viewModel.movieDetail
+            self.movieDetail = viewModel?.movieDetail
             guard let movieParams = movieDetail else { return UITableViewCell() }
             DispatchQueue.main.async {
                 cell.innerCellConfigure(movie: movieParams)
