@@ -12,7 +12,6 @@ final class MainViewController: UIViewController {
     // MARK: - Private Properties
 
     private let moviesTableView = UITableView()
-    private let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
 
     // MARK: - Lifecycle methods
 

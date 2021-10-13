@@ -13,7 +13,7 @@ final class DetailsViewController: UIViewController {
 
     // MARK: - Private Properties
 
-    private let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
+    let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
 
     // MARK: - Lifecycle methods
 
@@ -75,7 +75,6 @@ final class DetailsViewController: UIViewController {
         let jsonUrlString =
             "https://api.themoviedb.org/3/movie/\(id)?api_key=3227cbb07711665d37db3b97df155838&language=en-US"
         guard let url = URL(string: jsonUrlString) else { return }
-        print(url)
         let session = URLSession.shared.dataTask(with: url) { [self] data, _, error in
             guard let data = data else { return }
             do {
@@ -100,23 +99,53 @@ extension DetailsViewController: UITableViewDataSource {
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         switch indexPath.row {
         case 0:
             guard let cell = detailsTableView
-                .dequeueReusableCell(withIdentifier: "detailID", for: indexPath) as? DetailsTableViewCell
+                    .dequeueReusableCell(withIdentifier: "detailID", for: indexPath) as? DetailsTableViewCell
             else { return UITableViewCell() }
+
+            func confExpCell(id: Int) {
+                cell.downloadDetailedMovies(id: id) { [ weak self ] movieFromInternet in
+                    DispatchQueue.main.async {
+                        cell.titleLabel.text = movieFromInternet.originalTitle
+                        cell.backgroundColor = .black
+                        self?.detailsTableView.reloadData()
+                        let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
+                        let trailLink = movieFromInternet.backdropPath
+                        let tryLink = URL(string: basePosterUrlString + trailLink)
+                        let url = URL(string: basePosterUrlString + trailLink)
+                    }
+                }
+            }
+            //            confExpCell(id: id)
             configurePosterCell(cell: cell)
             return cell
         case 1:
             guard let cell = detailsTableView
-                .dequeueReusableCell(withIdentifier: "specificID", for: indexPath) as? SpecificDetailsTableViewCell
+                    .dequeueReusableCell(withIdentifier: "specificID", for: indexPath) as? SpecificDetailsTableViewCell
             else { return UITableViewCell() }
             configureSpecificCell(cell: cell)
             return cell
         default:
             return UITableViewCell()
         }
+
+        //MARK: - HERE is old conf
+        func configurePosterCell(cell: DetailsTableViewCell) {
+            cell.titleLabel.text = movieStruct?.originalTitle
+            cell.backgroundColor = .black
+            guard let trailingLink = movieStruct?.backdropPath,
+                  let url = URL(string: basePosterUrlString + trailingLink),
+                  let imageData = try? Data(contentsOf: url) else { return }
+            cell.posterImageView.image = UIImage(data: imageData)
+        }
+        //MARK: - Here is new conf
+
+        ///here is poster image conf
     }
+    /// End of new conf
 }
 
 // MARK: - UITableViewDelegate

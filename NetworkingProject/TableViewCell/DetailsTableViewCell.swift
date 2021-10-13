@@ -61,4 +61,23 @@ final class DetailsTableViewCell: UITableViewCell {
         titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1 / 2).isActive = true
         titleLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1 / 4).isActive = true
     }
+
+    func downloadDetailedMovies(id: Int, complition: @escaping ((MovieDetails)->())) {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let jsonUrlString =
+            "https://api.themoviedb.org/3/movie/\(id)?api_key=3227cbb07711665d37db3b97df155838&language=en-US"
+        guard let url = URL(string: jsonUrlString) else { return }
+        print(url)
+        let session = URLSession.shared.dataTask(with: url) { [self] data, _, error in
+            guard let data = data else { return }
+            do {
+                let incomingData = try decoder.decode(MovieDetails.self, from: data)
+                complition(incomingData)
+            } catch {
+                print("\(error)")
+            }
+        }
+        session.resume()
+    }
 }
