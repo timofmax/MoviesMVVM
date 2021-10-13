@@ -71,9 +71,9 @@ final class DetailsTableViewCell: UITableViewCell {
         let session = URLSession.shared.dataTask(with: url) { [self] data, _, error in
             guard let data = data else { return }
             do {
-                let incomingData = try decoder.decode(MovieDetails.self, from: data)
+                let specifiMovie = try decoder.decode(MovieDetails.self, from: data)
                 DispatchQueue.main.async {
-                    complition(incomingData)
+                    complition(specifiMovie)
                 }
             } catch {
                 print("\(error)")
@@ -90,7 +90,9 @@ final class DetailsTableViewCell: UITableViewCell {
             self?.titleLabel.text = movieFromInternet.originalTitle
             let trailLink = movieFromInternet.backdropPath
             let tryLink = URL(string: basePosterUrlString + trailLink)
-            let url = URL(string: basePosterUrlString + trailLink)
+            guard let url = URL(string: basePosterUrlString + trailLink) else { return }
+            guard let imageData = try? Data(contentsOf: url) else { return }
+            self?.posterImageView.image = UIImage(data: imageData)
         }
     }
 

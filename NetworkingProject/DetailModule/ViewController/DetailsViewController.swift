@@ -8,7 +8,7 @@ final class DetailsViewController: UIViewController {
     // MARK: - Public Properties
 
     var id = Int()
-    var movieStruct: MovieDetails?
+    var movieDetail: MovieDetails?
     let detailsTableView = UITableView()
 
     // MARK: - Private Properties
@@ -45,26 +45,26 @@ final class DetailsViewController: UIViewController {
     }
 
     private func configurePosterCell(cell: DetailsTableViewCell) {
-        cell.titleLabel.text = movieStruct?.originalTitle
+        cell.titleLabel.text = movieDetail?.originalTitle
         cell.backgroundColor = .black
-        guard let trailingLink = movieStruct?.backdropPath,
+        guard let trailingLink = movieDetail?.backdropPath,
               let url = URL(string: basePosterUrlString + trailingLink),
               let imageData = try? Data(contentsOf: url) else { return }
         cell.posterImageView.image = UIImage(data: imageData)
     }
 
     private func configureSpecificCell(cell: SpecificDetailsTableViewCell) {
-        cell.overviewLabel.text = movieStruct?.overview
+        cell.overviewLabel.text = movieDetail?.overview
         cell.backgroundColor = .black
-        if let budget = movieStruct?.budget {
+        if let budget = movieDetail?.budget {
             cell.budgetLabel.text = "💵 \(budget)"
         }
 
-        if let revenue = movieStruct?.revenue {
+        if let revenue = movieDetail?.revenue {
             cell.revenueLabel.text = "💵 \(revenue)"
         }
 
-        if let dateMovie = movieStruct?.releaseDate {
+        if let dateMovie = movieDetail?.releaseDate {
             cell.movieDateLabel.text = "\(dateMovie)"
         }
     }
@@ -79,7 +79,7 @@ final class DetailsViewController: UIViewController {
             guard let data = data else { return }
             do {
                 let incomingData = try decoder.decode(MovieDetails.self, from: data)
-                movieStruct.self = incomingData
+                movieDetail.self = incomingData
                 DispatchQueue.main.async {
                     self.detailsTableView.reloadData()
                 }
@@ -111,32 +111,14 @@ extension DetailsViewController: UITableViewDataSource {
             guard let cell = detailsTableView
                     .dequeueReusableCell(withIdentifier: "specificID", for: indexPath) as? SpecificDetailsTableViewCell
             else { return UITableViewCell() }
-            configureSpecificCell(cell: cell)
+            guard let movieDetail = movieDetail else { return UITableViewCell() }
+            cell.innerCellConfigure(movie: movieDetail)
             return cell
         default:
             return UITableViewCell()
         }
     }
 }
-
-/*
- private func configureSpecificCell(cell: SpecificDetailsTableViewCell) {
-     cell.overviewLabel.text = movieStruct?.overview
-     cell.backgroundColor = .black
-     if let budget = movieStruct?.budget {
-         cell.budgetLabel.text = "💵 \(budget)"
-     }
-
-     if let revenue = movieStruct?.revenue {
-         cell.revenueLabel.text = "💵 \(revenue)"
-     }
-
-     if let dateMovie = movieStruct?.releaseDate {
-         cell.movieDateLabel.text = "\(dateMovie)"
-     }
- }
- */
-
 
 // MARK: - UITableViewDelegate
 
@@ -145,3 +127,4 @@ extension DetailsViewController: UITableViewDelegate {
         300
     }
 }
+
