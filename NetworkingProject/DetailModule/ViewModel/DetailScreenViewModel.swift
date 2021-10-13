@@ -15,6 +15,17 @@ protocol DetailScreenViewModelProtocol {
 final class DetailViewModel: DetailScreenViewModelProtocol {
     var movieDetail: MovieDetails?
     var movies: ((MovieDetails?)->())?
+    var movieAPIService: MovieAPIServiceProtocol = MovieAPIService()
+
+//    func fetchMoviesFromViewModel(id: Int, complition: @escaping ((MovieDetails?) -> ())) {
+//        // Это для View
+//    }
+//
+//    func fetchMoviesFromApiService() {
+//        movieAPIService.fetchDetailsFromAPI(id: <#T##Int#>, complition: <#T##((MovieDetails?) -> ())##((MovieDetails?) -> ())##(MovieDetails?) -> ()#>)
+//    }
+
+
     func fetchMoviesFromViewModel(id: Int, complition: @escaping ((MovieDetails?)->())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase

@@ -7,7 +7,7 @@ import UIKit
 
 protocol MovieAPIServiceProtocol {
     func fetMovies(complition: @escaping (([Movie])->()))
-    func fetchMoviesFromViewModel(id: Int, complition: @escaping ((MovieDetails?)->()))
+    func fetchDetailsFromAPI(id: Int, complition: @escaping ((MovieDetails?)->()))
 }
 
 // Some Movies
@@ -31,7 +31,7 @@ final class MovieAPIService: MovieAPIServiceProtocol {
         }.resume()
     }
 
-    func fetchMoviesFromViewModel(id: Int, complition: @escaping ((MovieDetails?)->())) {
+    func fetchDetailsFromAPI(id: Int, complition: @escaping ((MovieDetails?)->())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let jsonUrlString =
