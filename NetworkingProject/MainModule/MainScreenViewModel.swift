@@ -7,15 +7,17 @@
 
 import Foundation
 
+typealias VoidHandler = (() -> ())
+
 protocol MainScreenViewModelProtocol {
     func getData()
     var movies: [Movie] { get set }
-    var updateView: (() -> ())? { get set }
+    var updateView: VoidHandler? { get set }
 }
 
 final class MainScreenViewModel: MainScreenViewModelProtocol {
     // MARK: - Public Properties
-    var updateView: (() -> ())?
+    var updateView: VoidHandler?
     var movies: [Movie] = []
 
     // MARK: - Private Properties
