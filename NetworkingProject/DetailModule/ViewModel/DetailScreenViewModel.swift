@@ -9,14 +9,12 @@ import Foundation
 
 protocol DetailScreenViewModelProtocol {
     func getData()
-    var movies: [Movie] { get set }
+    var movies: MovieDetails? { get set }
     var updateView: (() -> ())? { get set }
 }
 
-//final class DetailViewModel: DetailScreenViewModelProtocol {
-//    func getData() {
-//    }
-//
-//    var movies: [Movie]//
-//    var updateView: (() -> ())?
-//}
+final class DetailViewModel {
+    func getData() {
+    }
+    var updateView: (() -> ())?
+}

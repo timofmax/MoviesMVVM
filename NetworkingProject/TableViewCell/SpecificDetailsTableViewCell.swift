@@ -111,21 +111,3 @@ final class SpecificDetailsTableViewCell: UITableViewCell {
     }
 
 }
-
-/*
- private func configureSpecificCell(cell: SpecificDetailsTableViewCell) {
-     cell.overviewLabel.text = movieStruct?.overview
-     cell.backgroundColor = .black
-     if let budget = movieStruct?.budget {
-         cell.budgetLabel.text = "💵 \(budget)"
-     }
-
-     if let revenue = movieStruct?.revenue {
-         cell.revenueLabel.text = "💵 \(revenue)"
-     }
-
-     if let dateMovie = movieStruct?.releaseDate {
-         cell.movieDateLabel.text = "\(dateMovie)"
-     }
- }
- */

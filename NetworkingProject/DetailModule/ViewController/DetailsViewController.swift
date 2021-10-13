@@ -11,6 +11,7 @@ final class DetailsViewController: UIViewController {
     var movieDetail: MovieDetails?
     let detailsTableView = UITableView()
 
+    var detailViewModel = DetailViewModel()
     // MARK: - Private Properties
 
     let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
