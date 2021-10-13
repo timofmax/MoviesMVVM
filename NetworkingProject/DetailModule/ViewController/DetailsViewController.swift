@@ -105,22 +105,7 @@ extension DetailsViewController: UITableViewDataSource {
             guard let cell = detailsTableView
                     .dequeueReusableCell(withIdentifier: "detailID", for: indexPath) as? DetailsTableViewCell
             else { return UITableViewCell() }
-
-            func confExpCell(id: Int) {
-                cell.downloadDetailedMovies(id: id) { [ weak self ] movieFromInternet in
-                    DispatchQueue.main.async {
-                        cell.titleLabel.text = movieFromInternet.originalTitle
-                        cell.backgroundColor = .black
-                        self?.detailsTableView.reloadData()
-                        let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
-                        let trailLink = movieFromInternet.backdropPath
-                        let tryLink = URL(string: basePosterUrlString + trailLink)
-                        let url = URL(string: basePosterUrlString + trailLink)
-                    }
-                }
-            }
-            //            confExpCell(id: id)
-            configurePosterCell(cell: cell)
+            cell.configInCell(id: id)
             return cell
         case 1:
             guard let cell = detailsTableView
@@ -131,22 +116,27 @@ extension DetailsViewController: UITableViewDataSource {
         default:
             return UITableViewCell()
         }
-
-        //MARK: - HERE is old conf
-        func configurePosterCell(cell: DetailsTableViewCell) {
-            cell.titleLabel.text = movieStruct?.originalTitle
-            cell.backgroundColor = .black
-            guard let trailingLink = movieStruct?.backdropPath,
-                  let url = URL(string: basePosterUrlString + trailingLink),
-                  let imageData = try? Data(contentsOf: url) else { return }
-            cell.posterImageView.image = UIImage(data: imageData)
-        }
-        //MARK: - Here is new conf
-
-        ///here is poster image conf
     }
-    /// End of new conf
 }
+
+/*
+ private func configureSpecificCell(cell: SpecificDetailsTableViewCell) {
+     cell.overviewLabel.text = movieStruct?.overview
+     cell.backgroundColor = .black
+     if let budget = movieStruct?.budget {
+         cell.budgetLabel.text = "💵 \(budget)"
+     }
+
+     if let revenue = movieStruct?.revenue {
+         cell.revenueLabel.text = "💵 \(revenue)"
+     }
+
+     if let dateMovie = movieStruct?.releaseDate {
+         cell.movieDateLabel.text = "\(dateMovie)"
+     }
+ }
+ */
+
 
 // MARK: - UITableViewDelegate
 

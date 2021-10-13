@@ -68,16 +68,46 @@ final class DetailsTableViewCell: UITableViewCell {
         let jsonUrlString =
             "https://api.themoviedb.org/3/movie/\(id)?api_key=3227cbb07711665d37db3b97df155838&language=en-US"
         guard let url = URL(string: jsonUrlString) else { return }
-        print(url)
         let session = URLSession.shared.dataTask(with: url) { [self] data, _, error in
             guard let data = data else { return }
             do {
                 let incomingData = try decoder.decode(MovieDetails.self, from: data)
-                complition(incomingData)
+                DispatchQueue.main.async {
+                    complition(incomingData)
+                }
             } catch {
                 print("\(error)")
             }
         }
         session.resume()
     }
+
+    func configInCell(id: Int) {
+        downloadDetailedMovies(id: id) { [weak self ] movieFromInternet in
+            let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
+            let backColorView = UIView()
+            backColorView.backgroundColor = .black
+            self?.titleLabel.text = movieFromInternet.originalTitle
+            let trailLink = movieFromInternet.backdropPath
+            let tryLink = URL(string: basePosterUrlString + trailLink)
+            let url = URL(string: basePosterUrlString + trailLink)
+        }
+    }
+
+
+    /*
+    func configCell(movie: Movie) {
+        let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
+        let backColorView = UIView()
+        backColorView.backgroundColor = .clear
+        self.overviewLabel.text = movie.overview
+        self.titleMovieLabel.text = movie.title
+        self.ratingLabel.text = "\(movie.voteAverage) ⭐️"
+        guard let url = URL(string: basePosterUrlString + movie.posterPath) else { return }
+        // Fetch Image Data
+        if let data = try? Data(contentsOf: url) {
+            guard let image = UIImage(data: data) else { return }
+            self.posterImageView.image = image
+        }
+    } */
 }
