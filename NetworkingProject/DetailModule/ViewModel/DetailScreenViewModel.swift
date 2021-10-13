@@ -8,11 +8,11 @@
 import Foundation
 
 protocol DetailScreenViewModelProtocol {
-    func fetchMovies(id: Int)
-    var movieDetail: MovieDetails? { get set }
+    var movies: ((MovieDetails?)->())? { get set }
+    func fetchMoviesFromViewModel(id: Int, complition: @escaping ((MovieDetails?)->()))
 }
 
-final class DetailViewModel {
+final class DetailViewModel: DetailScreenViewModelProtocol {
     var movieDetail: MovieDetails?
     var movies: ((MovieDetails?)->())?
     func fetchMoviesFromViewModel(id: Int, complition: @escaping ((MovieDetails?)->())) {

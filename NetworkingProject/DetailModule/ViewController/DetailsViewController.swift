@@ -10,11 +10,8 @@ final class DetailsViewController: UIViewController {
     var id = Int()
     var movieDetail: MovieDetails?
     let detailsTableView = UITableView()
-
-    var viewModel = DetailViewModel()
-    // MARK: - Private Properties
-
-    let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
+    
+    var viewModel: DetailScreenViewModelProtocol = DetailViewModel()
 
     // MARK: - Lifecycle methods
 
@@ -26,7 +23,6 @@ final class DetailsViewController: UIViewController {
         detailsTableView.register(SpecificDetailsTableViewCell.self, forCellReuseIdentifier: "specificID")
         view.backgroundColor = .brown
         setView()
-//        fetchMovies()
         viewModel.fetchMoviesFromViewModel(id: id) { movieDetailFromViewModel in
             self.movieDetail = movieDetailFromViewModel
         }
