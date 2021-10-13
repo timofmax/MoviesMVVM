@@ -21,6 +21,7 @@ final class DetailViewModel: DetailScreenViewModelProtocol {
     //MARK: - Public Properties
     var movieDetail: MovieDetails?
     var movies: ((MovieDetails?)->())?
+    
     var updateViewData: (() -> ())?
     var movieAPIService: MovieAPIServiceProtocol = MovieAPIService()
     var id: Int
@@ -41,4 +42,5 @@ final class DetailViewModel: DetailScreenViewModelProtocol {
             self?.updateViewData?()
         }
     }
+
 }

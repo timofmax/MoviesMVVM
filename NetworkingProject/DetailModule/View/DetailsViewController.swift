@@ -6,7 +6,6 @@ import UIKit
 /// DetailsViewController
 final class DetailsViewController: UIViewController {
     // MARK: - Public Properties
-//    var id = Int()
     var movieDetail: MovieDetails?
     let detailsTableView = UITableView()
 
@@ -17,6 +16,7 @@ final class DetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         setView()
+        updateViewController()
     }
 
     // MARK: - Internal Methods
@@ -27,6 +27,13 @@ final class DetailsViewController: UIViewController {
 
     // MARK: - Private Methods
 
+    private func updateViewController() {
+        viewModel?.updateViewData = {
+            DispatchQueue.main.async {
+                self.detailsTableView.reloadData()
+            }
+        }
+    }
 
     private func setView() {
         detailsTableView.delegate = self

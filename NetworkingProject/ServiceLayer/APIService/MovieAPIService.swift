@@ -47,5 +47,4 @@ final class MovieAPIService: MovieAPIServiceProtocol {
         }
         session.resume()
     }
-
 }
