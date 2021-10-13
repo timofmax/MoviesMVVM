@@ -11,7 +11,7 @@ final class DetailsViewController: UIViewController {
     var movieDetail: MovieDetails?
     let detailsTableView = UITableView()
 
-    var detailViewModel = DetailViewModel()
+    var viewModel = DetailViewModel()
     // MARK: - Private Properties
 
     let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
@@ -26,7 +26,10 @@ final class DetailsViewController: UIViewController {
         detailsTableView.register(SpecificDetailsTableViewCell.self, forCellReuseIdentifier: "specificID")
         view.backgroundColor = .brown
         setView()
-        fetchMovies()
+//        fetchMovies()
+        viewModel.fetchMoviesFromViewModel(id: id) { movieDetailFromViewModel in
+            self.movieDetail = movieDetailFromViewModel
+        }
     }
 
     // MARK: - Private Methods
@@ -96,8 +99,13 @@ extension DetailsViewController: UITableViewDataSource {
             guard let cell = detailsTableView
                     .dequeueReusableCell(withIdentifier: "specificID", for: indexPath) as? SpecificDetailsTableViewCell
             else { return UITableViewCell() }
-            guard let movieDetail = movieDetail else { return UITableViewCell() }
-            cell.innerCellConfigure(movie: movieDetail)
+            viewModel.movies = { movieDetailFromClosure in
+                self.movieDetail = movieDetailFromClosure
+            }
+            guard let movieParams = movieDetail else { return UITableViewCell() }
+            DispatchQueue.main.async {
+                cell.innerCellConfigure(movie: movieParams)
+            }
             return cell
         default:
             return UITableViewCell()

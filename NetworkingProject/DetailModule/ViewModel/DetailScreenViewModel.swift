@@ -15,7 +15,7 @@ protocol DetailScreenViewModelProtocol {
 final class DetailViewModel {
     var movieDetail: MovieDetails?
     var movies: ((MovieDetails?)->())?
-    func fetchMovies(id: Int) {
+    func fetchMoviesFromViewModel(id: Int, complition: @escaping ((MovieDetails?)->())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let jsonUrlString =
@@ -26,6 +26,7 @@ final class DetailViewModel {
             do {
                 let incomingData = try decoder.decode(MovieDetails.self, from: data)
                 movieDetail.self = incomingData
+                complition(incomingData)
             } catch {
                 print("\(error)")
             }
