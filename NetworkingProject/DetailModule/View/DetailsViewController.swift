@@ -28,9 +28,7 @@ final class DetailsViewController: UIViewController {
         detailsTableView.register(SpecificDetailsTableViewCell.self, forCellReuseIdentifier: "specificID")
         view.backgroundColor = .black
         createTable()
-        viewModel.fetchMoviesFromViewModel(id: id) { movieDetailFromViewModel in
-            self.movieDetail = movieDetailFromViewModel
-        }
+        viewModel.fetchMoviesFromViewModel(id: id)
     }
 
     private func createTable() {
@@ -64,9 +62,7 @@ extension DetailsViewController: UITableViewDataSource {
             guard let cell = detailsTableView
                     .dequeueReusableCell(withIdentifier: "specificID", for: indexPath) as? SpecificDetailsTableViewCell
             else { return UITableViewCell() }
-            viewModel.movies = { movieDetailFromClosure in
-                self.movieDetail = movieDetailFromClosure
-            }
+            self.movieDetail = viewModel.movieDetail
             guard let movieParams = movieDetail else { return UITableViewCell() }
             DispatchQueue.main.async {
                 cell.innerCellConfigure(movie: movieParams)
