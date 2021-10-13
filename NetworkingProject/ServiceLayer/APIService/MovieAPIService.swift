@@ -1,37 +1,18 @@
-//
-//  MainViewModel.swift
-//  NetworkingProject
-//
-//  Created by Timofey Privalov on 12.10.2021.
-// Testing git stash!
+// MoviesManager.swift
+// Copyright © RoadMap. All rights reserved.
 
 import Foundation
+import UIKit
 
-protocol MainScreenViewModelProtocol {
-    func getData()
+
+protocol MovieAPIServiceProtocol {
     var movies: [Movie] { get set }
-    var updateView: (() -> ())? { get set }
 }
 
-final class MainScreenViewModel: MainScreenViewModelProtocol {
-    // MARK: - Public Properties
-    var updateView: (() -> ())?
+// Some Movies
+final class MovieAPIService: MovieAPIServiceProtocol {
     var movies: [Movie] = []
-
-    // MARK: - Private Properties
-    private var movieAPIService: MovieAPIServiceProtocol?
-
-    // MARK: - Lifecycle Method
-    init(movieAPIService: MovieAPIServiceProtocol) {
-        self.movieAPIService = movieAPIService
-    }
-
-    // MARK: - Public Method
-    func getData() {
-        fetMovies()
-    }
-
-    // MARK: - Private Method
+    
     private func fetMovies() {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
@@ -43,10 +24,9 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
             do {
                 let mv = try decoder.decode(IncomingJson.self, from: data)
                 self.movies = mv.results
-                self.updateView?()
             } catch {
                 print("\(error.localizedDescription)")
             }
         }.resume()
     }
- }
+}
