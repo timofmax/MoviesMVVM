@@ -53,22 +53,6 @@ final class DetailsViewController: UIViewController {
         cell.posterImageView.image = UIImage(data: imageData)
     }
 
-    private func configureSpecificCell(cell: SpecificDetailsTableViewCell) {
-        cell.overviewLabel.text = movieDetail?.overview
-        cell.backgroundColor = .black
-        if let budget = movieDetail?.budget {
-            cell.budgetLabel.text = "💵 \(budget)"
-        }
-
-        if let revenue = movieDetail?.revenue {
-            cell.revenueLabel.text = "💵 \(revenue)"
-        }
-
-        if let dateMovie = movieDetail?.releaseDate {
-            cell.movieDateLabel.text = "\(dateMovie)"
-        }
-    }
-
     private func fetchMovies() {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
