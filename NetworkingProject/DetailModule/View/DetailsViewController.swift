@@ -6,13 +6,13 @@ import UIKit
 /// DetailsViewController
 final class DetailsViewController: UIViewController {
     // MARK: - Public Properties
-
     var id = Int()
     var movieDetail: MovieDetails?
     let detailsTableView = UITableView()
-    
-    var viewModel: DetailScreenViewModelProtocol = DetailViewModel()
 
+    // MARK: - Private Properties
+    private var viewModel: DetailScreenViewModelProtocol = DetailViewModel()
+    private let movieAPIService = MovieAPIService()
     // MARK: - Lifecycle methods
 
     override func viewDidLoad() {
