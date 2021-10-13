@@ -16,22 +16,21 @@ final class DetailsViewController: UIViewController {
     // MARK: - Lifecycle methods
 
     override func viewDidLoad() {
-        detailsTableView.delegate = self
-        detailsTableView.dataSource = self
-        detailsTableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: "detailID")
-        detailsTableView.register(SpecificDetailsTableViewCell.self, forCellReuseIdentifier: "specificID")
-        view.backgroundColor = .brown
         setView()
-        viewModel.fetchMoviesFromViewModel(id: id) { movieDetailFromViewModel in
-            self.movieDetail = movieDetailFromViewModel
-        }
     }
 
     // MARK: - Private Methods
 
     private func setView() {
+        detailsTableView.delegate = self
+        detailsTableView.dataSource = self
+        detailsTableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: "detailID")
+        detailsTableView.register(SpecificDetailsTableViewCell.self, forCellReuseIdentifier: "specificID")
         view.backgroundColor = .black
         createTable()
+        viewModel.fetchMoviesFromViewModel(id: id) { movieDetailFromViewModel in
+            self.movieDetail = movieDetailFromViewModel
+        }
     }
 
     private func createTable() {
