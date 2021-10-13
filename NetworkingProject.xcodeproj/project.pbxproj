@@ -55,19 +55,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05087FBF26B0B993004B837F /* ViewController */ = {
+		05087FBF26B0B993004B837F /* View */ = {
 			isa = PBXGroup;
 			children = (
 				05A64C7026B3279E005CD0BF /* DetailsViewController.swift */,
 			);
-			path = ViewController;
+			path = View;
 			sourceTree = "<group>";
 		};
 		0518730C271607D700F5F339 /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
 				0518730E271607EB00F5F339 /* ViewModel */,
-				05087FBF26B0B993004B837F /* ViewController */,
+				05087FBF26B0B993004B837F /* View */,
 				0589836F26B095F600BF8BE1 /* Model */,
 			);
 			path = DetailModule;

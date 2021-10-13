@@ -16,7 +16,6 @@ final class DetailsViewController: UIViewController {
     // MARK: - Lifecycle methods
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         detailsTableView.delegate = self
         detailsTableView.dataSource = self
         detailsTableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: "detailID")
@@ -26,6 +25,7 @@ final class DetailsViewController: UIViewController {
         viewModel.fetchMoviesFromViewModel(id: id) { movieDetailFromViewModel in
             self.movieDetail = movieDetailFromViewModel
         }
+        detailsTableView.reloadData()
     }
 
     // MARK: - Private Methods
@@ -62,6 +62,7 @@ extension DetailsViewController: UITableViewDataSource {
             cell.configInCell(id: id)
             return cell
         case 1:
+        super.viewDidLoad()
             guard let cell = detailsTableView
                     .dequeueReusableCell(withIdentifier: "specificID", for: indexPath) as? SpecificDetailsTableViewCell
             else { return UITableViewCell() }
@@ -86,4 +87,3 @@ extension DetailsViewController: UITableViewDelegate {
         300
     }
 }
-

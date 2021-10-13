@@ -85,8 +85,8 @@ final class DetailsTableViewCell: UITableViewCell {
     func configInCell(id: Int) {
         downloadDetailedMovies(id: id) { [weak self ] movieFromInternet in
             let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
-            let backColorView = UIView()
-            backColorView.backgroundColor = .black
+            let backColorView = UIView()            
+            backColorView.backgroundColor = .clear
             self?.titleLabel.text = movieFromInternet.originalTitle
             let trailLink = movieFromInternet.backdropPath
             let tryLink = URL(string: basePosterUrlString + trailLink)

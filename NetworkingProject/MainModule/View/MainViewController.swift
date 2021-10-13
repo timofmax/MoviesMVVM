@@ -23,6 +23,7 @@ final class MainViewController: UIViewController {
         setView()
         updateViewController()
         mainViewModel.getData()
+        moviesTableView.reloadData()
     }
 
     // MARK: - Private Methods
