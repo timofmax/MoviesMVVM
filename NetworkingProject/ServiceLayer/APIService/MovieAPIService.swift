@@ -4,13 +4,12 @@
 import Foundation
 import UIKit
 
-
 protocol MovieAPIServiceProtocol {
     func fetMovies(complition: @escaping (([Movie])->()))
     func fetchDetailsFromAPI(id: Int, complition: @escaping ((MovieDetails?)->()))
 }
 
-// Some Movies
+/// MovieAPIService
 final class MovieAPIService: MovieAPIServiceProtocol {
     
     func fetMovies(complition: @escaping (([Movie])->())) {

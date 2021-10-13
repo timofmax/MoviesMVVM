@@ -30,11 +30,11 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
 
     // MARK: - Public Method
     func getData() {
-        fetMovies()
+        fetchMovies()
     }
 
     // MARK: - Private Method
-    private func fetMovies() {
+    private func fetchMovies() {
         movieAPIService?.fetMovies { [ weak self ] moviesFromApiService in
             self?.movies = moviesFromApiService
             self?.updateView?()

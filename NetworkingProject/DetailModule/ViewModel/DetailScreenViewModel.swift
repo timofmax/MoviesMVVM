@@ -7,9 +7,11 @@
 
 import Foundation
 
+typealias VoideHandler = (()->())
+
 protocol DetailScreenViewModelProtocol {
     var movies: ((MovieDetails?)->())? { get set }
-    var updateViewData: (() -> ())? { get set }
+    var updateViewData: VoideHandler? { get set }
     func fetchMoviesFromViewModel(id: Int)
     var movieDetail: MovieDetails? { get set }
 }
