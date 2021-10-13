@@ -25,7 +25,6 @@ final class DetailsViewController: UIViewController {
         viewModel.fetchMoviesFromViewModel(id: id) { movieDetailFromViewModel in
             self.movieDetail = movieDetailFromViewModel
         }
-        detailsTableView.reloadData()
     }
 
     // MARK: - Private Methods
