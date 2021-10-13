@@ -47,36 +47,6 @@ final class DetailsViewController: UIViewController {
         detailsTableView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
         detailsTableView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
     }
-
-    private func configurePosterCell(cell: DetailsTableViewCell) {
-        cell.titleLabel.text = movieDetail?.originalTitle
-        cell.backgroundColor = .black
-        guard let trailingLink = movieDetail?.backdropPath,
-              let url = URL(string: basePosterUrlString + trailingLink),
-              let imageData = try? Data(contentsOf: url) else { return }
-        cell.posterImageView.image = UIImage(data: imageData)
-    }
-
-    private func fetchMovies() {
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let jsonUrlString =
-            "https://api.themoviedb.org/3/movie/\(id)?api_key=3227cbb07711665d37db3b97df155838&language=en-US"
-        guard let url = URL(string: jsonUrlString) else { return }
-        let session = URLSession.shared.dataTask(with: url) { [self] data, _, error in
-            guard let data = data else { return }
-            do {
-                let incomingData = try decoder.decode(MovieDetails.self, from: data)
-                movieDetail.self = incomingData
-                DispatchQueue.main.async {
-                    self.detailsTableView.reloadData()
-                }
-            } catch {
-                print("\(error)")
-            }
-        }
-        session.resume()
-    }
 }
 
 // MARK: - UITableViewDataSource
