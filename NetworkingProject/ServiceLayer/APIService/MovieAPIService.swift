@@ -7,13 +7,14 @@ import UIKit
 
 protocol MovieAPIServiceProtocol {
     var movies: [Movie] { get set }
+    func fetMovies(complition: @escaping (([Movie])->()))
 }
 
 // Some Movies
 final class MovieAPIService: MovieAPIServiceProtocol {
     var movies: [Movie] = []
     
-    private func fetMovies() {
+    func fetMovies(complition: @escaping (([Movie])->())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let urlMovie =
@@ -24,6 +25,8 @@ final class MovieAPIService: MovieAPIServiceProtocol {
             do {
                 let mv = try decoder.decode(IncomingJson.self, from: data)
                 self.movies = mv.results
+                let moviesss = mv.results
+                complition(moviesss)
             } catch {
                 print("\(error.localizedDescription)")
             }
