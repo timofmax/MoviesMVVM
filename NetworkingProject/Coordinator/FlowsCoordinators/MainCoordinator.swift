@@ -11,8 +11,11 @@ final class MainCoordinator: BaseCoordinator {
     // MARK: - Public Properties
 
     var onFinishFlow: VoidHandler?
-    var assembly: AssemblyProtocol?
-    var navController: UINavigationController?
+
+    // MARK: - Private Properties
+    
+    private var assembly: AssemblyProtocol?
+    private var navController: UINavigationController?
 
     //MARK: - Initializers
 

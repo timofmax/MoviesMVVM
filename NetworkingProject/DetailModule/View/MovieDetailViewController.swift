@@ -6,12 +6,14 @@ import UIKit
 /// DetailsViewController
 final class MovieDetailViewController: UIViewController {
     // MARK: - Public Properties
+
     var movieDetail: MovieDetails?
-    let detailsTableView = UITableView()
 
     // MARK: - Private Properties
+
+    private let detailsTableView = UITableView()
     private var viewModel: MovieDetailViewModelProtocol?
-    private let movieAPIService = MovieAPIService()
+
     // MARK: - Lifecycle methods
 
     convenience init(viewModel: MovieDetailViewModelProtocol) {

@@ -7,10 +7,8 @@
 
 import Foundation
 
-typealias VoideHandler = (()->())
-
 protocol MovieDetailViewModelProtocol {
-    var updateViewData: VoideHandler? { get set }
+    var updateViewData: VoidHandler? { get set }
     func fetchMoviesFromViewModel(id: Int)
     var movieDetail: MovieDetails? { get set }
     var id: Int { get set }
@@ -19,7 +17,7 @@ protocol MovieDetailViewModelProtocol {
 final class MovieDetailViewModel: MovieDetailViewModelProtocol {
     // MARK: - Public Properties
     var movieDetail: MovieDetails?
-    var updateViewData: (() -> ())?
+    var updateViewData: VoidHandler?
     var id: Int
     // MARK: - Private Properties
 //    private var movieAPIService: MovieAPIServiceProtocol = MovieAPIService

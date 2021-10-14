@@ -6,8 +6,8 @@ import UIKit
 final class ApplicationCoordinator: BaseCoordinator {
     // MARK: - Public Properties
 
-    var assembly: AssemblyProtocol?
-    var navController: UINavigationController?
+    private var assembly: AssemblyProtocol?
+    private var navController: UINavigationController?
 
     //MARK: - Initializers
 

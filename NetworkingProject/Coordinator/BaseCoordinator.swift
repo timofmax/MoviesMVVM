@@ -7,10 +7,10 @@
 import UIKit
 /// BaseCoordinator
 class BaseCoordinator {
-    // MARK: - Public Properties
-    var childCoordinators: [BaseCoordinator] = []
+    // MARK: - Private Properties
+    private var childCoordinators: [BaseCoordinator] = []
 
-    // MARK: - Public Properties
+    // MARK: - Lifecycle
 
     required init(assembly: AssemblyProtocol, navController: UINavigationController? = nil) {}
 
