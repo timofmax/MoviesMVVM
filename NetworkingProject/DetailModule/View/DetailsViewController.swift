@@ -15,8 +15,8 @@ final class DetailsViewController: UIViewController {
     // MARK: - Lifecycle methods
 
     override func viewDidLoad() {
-        setView()
         updateViewController()
+        setView()
     }
 
     // MARK: - Internal Methods
