@@ -110,11 +110,11 @@ final class MovieTableViewCell: UITableViewCell {
         let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
         let backColorView = UIView()
         backColorView.backgroundColor = .clear
+        self.selectionStyle = .none
         self.overviewLabel.text = movie.overview
         self.titleMovieLabel.text = movie.title
         self.ratingLabel.text = "\(movie.voteAverage) ⭐️"
         guard let url = URL(string: basePosterUrlString + movie.posterPath) else { return }
-        // Fetch Image Data
         if let data = try? Data(contentsOf: url) {
             guard let image = UIImage(data: data) else { return }
             self.posterImageView.image = image

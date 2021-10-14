@@ -6,23 +6,23 @@ import UIKit
 /// DetailsTableViewCell is cell for Table
 final class DetailsTableViewCell: UITableViewCell {
     // MARK: - Public Properties
-
     var posterImageView = UIImageView()
     var titleLabel = UILabel()
 
-    // MARK: - Initializers
+    // MARK: - Private Properties
+    private let imageAPIService = ImageAPIService()
 
+    // MARK: - Initializers
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setView()
     }
 
+    // MARK: - LifeCycle Methods
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
     // MARK: - Private Methods
-
     private func setView() {
         createPoster()
         createTitle()
@@ -60,5 +60,19 @@ final class DetailsTableViewCell: UITableViewCell {
         titleLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1 / 2).isActive = true
         titleLabel.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 1 / 4).isActive = true
+    }
+
+    func configInCell(id: Int) {
+        imageAPIService.downloadDetailedMovies(id: id) { movieFromInternet in
+            let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
+            let backColorView = UIView()
+            backColorView.backgroundColor = .clear
+            self.titleLabel.text = movieFromInternet.originalTitle
+            let trailLink = movieFromInternet.backdropPath
+            let tryLink = URL(string: basePosterUrlString + trailLink)
+            guard let url = URL(string: basePosterUrlString + trailLink) else { return }
+            guard let imageData = try? Data(contentsOf: url) else { return }
+            self.posterImageView.image = UIImage(data: imageData)
+        }
     }
 }

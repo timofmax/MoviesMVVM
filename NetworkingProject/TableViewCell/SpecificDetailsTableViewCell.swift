@@ -101,4 +101,13 @@ final class SpecificDetailsTableViewCell: UITableViewCell {
         overviewLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
         overviewLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
     }
+
+    func innerCellConfigure(movie: MovieDetails) {
+        self.overviewLabel.text = movie.overview
+        self.backgroundColor = .black
+        self.budgetLabel.text = "💵 \(movie.budget)"
+        self.revenueLabel.text = "💵 \(movie.revenue)"
+        self.movieDateLabel.text = "\(movie.releaseDate)"
+    }
+
 }
