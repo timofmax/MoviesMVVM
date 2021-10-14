@@ -22,7 +22,7 @@ final class Assembly: AssemblyProtocol {
 
     func createMovieDetailModule(movieID: Int) -> UIViewController {
         let movieAPIservice = MovieAPIService()
-        let viewModel = DetailViewModel(movieID: movieID)
+        let viewModel = MovieDetailViewModel(movieID: movieID)
         let view = MovieDetailViewController(viewModel: viewModel)
         return view
     }

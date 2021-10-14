@@ -10,11 +10,11 @@ final class MovieDetailViewController: UIViewController {
     let detailsTableView = UITableView()
 
     // MARK: - Private Properties
-    private var viewModel: DetailScreenViewModelProtocol?
+    private var viewModel: MovieDetailViewModelProtocol?
     private let movieAPIService = MovieAPIService()
     // MARK: - Lifecycle methods
 
-    convenience init(viewModel: DetailScreenViewModelProtocol) {
+    convenience init(viewModel: MovieDetailViewModelProtocol) {
         self.init()
         self.viewModel = viewModel
     }
@@ -26,7 +26,7 @@ final class MovieDetailViewController: UIViewController {
 
     // MARK: - Internal Methods
 
-    func setupViewModel(viewModel: DetailScreenViewModelProtocol) {
+    func setupViewModel(viewModel: MovieDetailViewModelProtocol) {
         self.viewModel = viewModel
     }
 

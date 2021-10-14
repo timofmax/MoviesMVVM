@@ -88,7 +88,7 @@ extension MovieViewController: UITableViewDelegate {
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
         let withDetailViewController = MovieDetailViewController()
-        let detailedViewModel = DetailViewModel(movieID: viewModel.movies[indexPath.row].id)
+        let detailedViewModel = MovieDetailViewModel(movieID: viewModel.movies[indexPath.row].id)
         withDetailViewController.setupViewModel(viewModel: detailedViewModel)
         navigationController?.pushViewController(withDetailViewController, animated: true)
     }

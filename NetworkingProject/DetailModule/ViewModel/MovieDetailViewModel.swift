@@ -9,14 +9,14 @@ import Foundation
 
 typealias VoideHandler = (()->())
 
-protocol DetailScreenViewModelProtocol {
+protocol MovieDetailViewModelProtocol {
     var updateViewData: VoideHandler? { get set }
     func fetchMoviesFromViewModel(id: Int)
     var movieDetail: MovieDetails? { get set }
     var id: Int { get set }
 }
 
-final class DetailViewModel: DetailScreenViewModelProtocol {
+final class MovieDetailViewModel: MovieDetailViewModelProtocol {
     // MARK: - Public Properties
     var movieDetail: MovieDetails?
     var updateViewData: (() -> ())?
