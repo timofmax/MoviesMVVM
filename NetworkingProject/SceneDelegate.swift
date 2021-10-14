@@ -13,10 +13,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
 
         let navController = UINavigationController()
-        let viewControler = MainViewController()
+        let viewControler = MovieViewController()
         let movieAPIService = MovieAPIService()
         let mainScreenViewModel = MainScreenViewModel(movieAPIService: movieAPIService)
-        viewControler.mainViewModel = mainScreenViewModel
+        viewControler.viewModel = mainScreenViewModel
         navController.viewControllers = [viewControler]
         navController.navigationBar.isHidden = false
 

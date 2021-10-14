@@ -4,7 +4,7 @@
 import UIKit
 
 /// DetailsViewController
-final class DetailsViewController: UIViewController {
+final class MovieDetailViewController: UIViewController {
     // MARK: - Public Properties
     var movieDetail: MovieDetails?
     let detailsTableView = UITableView()
@@ -13,6 +13,11 @@ final class DetailsViewController: UIViewController {
     private var viewModel: DetailScreenViewModelProtocol?
     private let movieAPIService = MovieAPIService()
     // MARK: - Lifecycle methods
+
+    convenience init(viewModel: DetailScreenViewModelProtocol) {
+        self.init()
+        self.viewModel = viewModel
+    }
 
     override func viewDidLoad() {
         updateViewController()
@@ -57,7 +62,7 @@ final class DetailsViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension DetailsViewController: UITableViewDataSource {
+extension MovieDetailViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         2
     }
@@ -90,7 +95,7 @@ extension DetailsViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension DetailsViewController: UITableViewDelegate {
+extension MovieDetailViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         300
     }
