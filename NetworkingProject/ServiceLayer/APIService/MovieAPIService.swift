@@ -16,7 +16,7 @@ final class MovieAPIService: MovieAPIServiceProtocol {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let urlMovie =
-            "https://api.themoviedb.org/3/movie/top_rated?api_key=3227cbb07711665d37db3b97df155838&language=en-US&page=1#"
+            "https://api.themoviedb.org/3/movie/top_rated?api_key=3227cbb07711665d37db3b97df155838&language=en-US&page=3#"
         guard let url = URL(string: urlMovie) else { return }
         URLSession.shared.dataTask(with: url) { [self] data, _, error in
             guard let data = data else { return }

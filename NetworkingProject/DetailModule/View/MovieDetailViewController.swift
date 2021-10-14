@@ -4,15 +4,28 @@
 import UIKit
 
 /// DetailsViewController
-final class DetailsViewController: UIViewController {
+final class MovieDetailViewController: UIViewController {
+
+    private enum Constants {
+        static let cellQuantity = 2
+    }
+
+
     // MARK: - Public Properties
+
     var movieDetail: MovieDetails?
-    let detailsTableView = UITableView()
 
     // MARK: - Private Properties
-    private var viewModel: DetailScreenViewModelProtocol?
-    private let movieAPIService = MovieAPIService()
+
+    private let detailsTableView = UITableView()
+    private var viewModel: MovieDetailViewModelProtocol?
+
     // MARK: - Lifecycle methods
+
+    convenience init(viewModel: MovieDetailViewModelProtocol) {
+        self.init()
+        self.viewModel = viewModel
+    }
 
     override func viewDidLoad() {
         updateViewController()
@@ -21,7 +34,7 @@ final class DetailsViewController: UIViewController {
 
     // MARK: - Internal Methods
 
-    func setupViewModel(viewModel: DetailScreenViewModelProtocol) {
+    func setupViewModel(viewModel: MovieDetailViewModelProtocol) {
         self.viewModel = viewModel
     }
 
@@ -57,9 +70,9 @@ final class DetailsViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension DetailsViewController: UITableViewDataSource {
+extension MovieDetailViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        2
+        Constants.cellQuantity
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -90,8 +103,8 @@ extension DetailsViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension DetailsViewController: UITableViewDelegate {
+extension MovieDetailViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        300
+        UITableView.automaticDimension
     }
 }

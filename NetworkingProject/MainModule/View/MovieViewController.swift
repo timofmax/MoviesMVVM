@@ -3,17 +3,25 @@
 
 import UIKit
 
+typealias IntHandler = (Int) -> Void
+
 /// MEGA documentation
-final class MainViewController: UIViewController {
+final class MovieViewController: UIViewController {
     // MARK: - Public Properties
     
-    var mainViewModel: MainScreenViewModelProtocol!
+    var viewModel: MainScreenViewModelProtocol!
+    var toDetailScreen: IntHandler?
 
     // MARK: - Private Properties
 
     private let moviesTableView = UITableView()
 
     // MARK: - Lifecycle methods
+
+    convenience init(viewModel: MainScreenViewModelProtocol) {
+        self.init()
+        self.viewModel = viewModel
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +30,7 @@ final class MainViewController: UIViewController {
         moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "myCell")
         setView()
         updateViewController()
-        mainViewModel.getData()
+        viewModel.getData()
     }
 
     // MARK: - Private Methods
@@ -37,7 +45,7 @@ final class MainViewController: UIViewController {
     }
 
     private func updateViewController() {
-        mainViewModel.updateView = {
+        viewModel.updateView = {
             DispatchQueue.main.async {
                 self.moviesTableView.reloadData()
             }
@@ -56,9 +64,9 @@ final class MainViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension MainViewController: UITableViewDataSource {
+extension MovieViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        mainViewModel.movies.count
+        viewModel.movies.count
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,7 +76,7 @@ extension MainViewController: UITableViewDataSource {
         ) as? MovieTableViewCell
         else { return UITableViewCell() }
         cell.backgroundColor = .black
-        let moviesList = mainViewModel.movies
+        let moviesList = viewModel.movies
         cell.configCell(movie: moviesList[indexPath.row])
         return cell
     }
@@ -76,15 +84,18 @@ extension MainViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension MainViewController: UITableViewDelegate {
+extension MovieViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
         300
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let withDetailViewController = DetailsViewController()
-        let detailedViewModel = DetailViewModel(movieID: mainViewModel.movies[indexPath.row].id)
-        withDetailViewController.setupViewModel(viewModel: detailedViewModel)
-        navigationController?.pushViewController(withDetailViewController, animated: true)
+//        let withDetailViewController = MovieDetailViewController()
+//        let detailedViewModel = MovieDetailViewModel(movieID: viewModel.movies[indexPath.row].id)
+
+        let movedID = viewModel.movies[indexPath.row].id
+        toDetailScreen?(movedID)
+//        withDetailViewController.setupViewModel(viewModel: detailedViewModel)
+//        navigationController?.pushViewController(withDetailViewController, animated: true)
     }
 }
