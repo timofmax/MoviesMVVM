@@ -36,6 +36,12 @@ class BaseCoordinator {
     }
 
     func setAsRoot(_ controller: UIViewController) {
-        UIApplication.shared.keyWindow?.rootViewController = controller
+        let keyWindow = UIApplication
+            .shared
+            .connectedScenes
+            .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
+            .first { $0.isKeyWindow }
+
+        keyWindow?.rootViewController = controller
     }
 }
