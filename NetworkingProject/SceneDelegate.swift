@@ -10,17 +10,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
+        window.makeKeyAndVisible()
         self.window = window
 
-        let navController = UINavigationController()
-        let viewControler = MovieViewController()
-        let movieAPIService = MovieAPIService()
-        let mainScreenViewModel = MainScreenViewModel(movieAPIService: movieAPIService)
-        viewControler.viewModel = mainScreenViewModel
-        navController.viewControllers = [viewControler]
-        navController.navigationBar.isHidden = false
+        let assembly = Assembly()
 
-        window.rootViewController = navController
-        window.makeKeyAndVisible()
+        let coordinator = ApplicationCoordinator(assembly: assembly)
+        coordinator.start()
     }
 }

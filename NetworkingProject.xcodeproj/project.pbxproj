@@ -24,6 +24,9 @@
 		05B9E81826AF18CF00105F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B9E81726AF18CF00105F8C /* Assets.xcassets */; };
 		05B9E81B26AF18CF00105F8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B9E81926AF18CF00105F8C /* LaunchScreen.storyboard */; };
 		05CE07E527186ABA00B1ACB4 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE07E427186ABA00B1ACB4 /* Assembly.swift */; };
+		05CE07EC271887ED00B1ACB4 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE07EB271887ED00B1ACB4 /* BaseCoordinator.swift */; };
+		05CE07EF2718891C00B1ACB4 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE07EE2718891C00B1ACB4 /* ApplicationCoordinator.swift */; };
+		05CE07F327188DEB00B1ACB4 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE07F227188DEB00B1ACB4 /* MainCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		05B9E81A26AF18CF00105F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05B9E81C26AF18CF00105F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05CE07E427186ABA00B1ACB4 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		05CE07EB271887ED00B1ACB4 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		05CE07EE2718891C00B1ACB4 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		05CE07F227188DEB00B1ACB4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +182,7 @@
 				05B9E80E26AF18CC00105F8C /* AppDelegate.swift */,
 				05B9E81026AF18CC00105F8C /* SceneDelegate.swift */,
 				05CE07E427186ABA00B1ACB4 /* Assembly.swift */,
+				05CE07EA271887D900B1ACB4 /* Coordinator */,
 				051873122716089400F5F339 /* ServiceLayer */,
 				0534CA272714F1D0009A0654 /* MainModule */,
 				0518730C271607D700F5F339 /* DetailModule */,
@@ -186,6 +193,24 @@
 				05B9E81C26AF18CF00105F8C /* Info.plist */,
 			);
 			path = NetworkingProject;
+			sourceTree = "<group>";
+		};
+		05CE07EA271887D900B1ACB4 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				05CE07EE2718891C00B1ACB4 /* ApplicationCoordinator.swift */,
+				05CE07EB271887ED00B1ACB4 /* BaseCoordinator.swift */,
+				05CE07F127188DDE00B1ACB4 /* FlowsCoordinators */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		05CE07F127188DDE00B1ACB4 /* FlowsCoordinators */ = {
+			isa = PBXGroup;
+			children = (
+				05CE07F227188DEB00B1ACB4 /* MainCoordinator.swift */,
+			);
+			path = FlowsCoordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05CE07F327188DEB00B1ACB4 /* MainCoordinator.swift in Sources */,
 				054AC5102717156A009F3883 /* ImageAPIService.swift in Sources */,
 				059AE01026B4892C006B76E1 /* MovieAPIService.swift in Sources */,
 				05B9E81326AF18CC00105F8C /* MovieViewController.swift in Sources */,
@@ -309,10 +335,12 @@
 				051873102716081100F5F339 /* MovieDetailViewModel.swift in Sources */,
 				059A911826B1716400FF27E9 /* MovieTableViewCell.swift in Sources */,
 				05B9E81126AF18CC00105F8C /* SceneDelegate.swift in Sources */,
+				05CE07EC271887ED00B1ACB4 /* BaseCoordinator.swift in Sources */,
 				05A64C7126B3279E005CD0BF /* MovieDetailViewController.swift in Sources */,
 				0589837226B09BFD00BF8BE1 /* Movie.swift in Sources */,
 				05A64C7626B33085005CD0BF /* DetailsTableViewCell.swift in Sources */,
 				0534CA2E2714F2BB009A0654 /* MainScreenViewModel.swift in Sources */,
+				05CE07EF2718891C00B1ACB4 /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

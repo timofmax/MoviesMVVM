@@ -3,11 +3,14 @@
 
 import UIKit
 
+typealias IntHandler = (Int) -> Void
+
 /// MEGA documentation
 final class MovieViewController: UIViewController {
     // MARK: - Public Properties
     
     var viewModel: MainScreenViewModelProtocol!
+    var toDetailScreen: IntHandler?
 
     // MARK: - Private Properties
 
@@ -87,9 +90,12 @@ extension MovieViewController: UITableViewDelegate {
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let withDetailViewController = MovieDetailViewController()
-        let detailedViewModel = MovieDetailViewModel(movieID: viewModel.movies[indexPath.row].id)
-        withDetailViewController.setupViewModel(viewModel: detailedViewModel)
-        navigationController?.pushViewController(withDetailViewController, animated: true)
+//        let withDetailViewController = MovieDetailViewController()
+//        let detailedViewModel = MovieDetailViewModel(movieID: viewModel.movies[indexPath.row].id)
+
+        let movedID = viewModel.movies[indexPath.row].id
+        toDetailScreen?(movedID)
+//        withDetailViewController.setupViewModel(viewModel: detailedViewModel)
+//        navigationController?.pushViewController(withDetailViewController, animated: true)
     }
 }

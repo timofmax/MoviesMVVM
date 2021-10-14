@@ -22,10 +22,11 @@ final class MovieDetailViewModel: MovieDetailViewModelProtocol {
     var updateViewData: (() -> ())?
     var id: Int
     // MARK: - Private Properties
-    private var movieAPIService: MovieAPIServiceProtocol = MovieAPIService()
-
+//    private var movieAPIService: MovieAPIServiceProtocol = MovieAPIService
+    private var movieAPIService: MovieAPIServiceProtocol?
     // MARK: - Lifecycle
-    init(movieID: Int) {
+    init(movieAPIService: MovieAPIServiceProtocol, movieID: Int) {
+        self.movieAPIService = movieAPIService
         self.id = movieID
     }
 
@@ -36,6 +37,7 @@ final class MovieDetailViewModel: MovieDetailViewModelProtocol {
 
     // MARK: - Private Methods
     private func fetchDetailData(filmID: Int) {
+        guard let movieAPIService = movieAPIService else { return }
         movieAPIService.fetchDetailsFromAPI(id: filmID) { [ weak self ] result in
             self?.movieDetail = result
             self?.updateViewData?()
