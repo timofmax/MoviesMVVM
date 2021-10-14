@@ -6,7 +6,7 @@ import UIKit
 final class ApplicationCoordinator: BaseCoordinator {
     // MARK: - Public Properties
 
-    private var assembly: AssemblyProtocol?
+    private var assembly: AssemblyProtocol!
     private var navController: UINavigationController?
 
     //MARK: - Initializers
@@ -25,8 +25,6 @@ final class ApplicationCoordinator: BaseCoordinator {
     //MARK: - Private methods
 
     private func toMain() {
-        guard let assembly = assembly else { fatalError() }
-
         let coordinator = MainCoordinator(assembly: assembly, navController: navController)
 
         coordinator.onFinishFlow = { [weak self] in

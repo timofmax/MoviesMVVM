@@ -41,7 +41,6 @@ class BaseCoordinator {
             .connectedScenes
             .flatMap { ($0 as? UIWindowScene)?.windows ?? [] }
             .first { $0.isKeyWindow }
-
         keyWindow?.rootViewController = controller
     }
 }
