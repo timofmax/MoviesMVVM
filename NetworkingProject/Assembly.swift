@@ -9,7 +9,7 @@ import UIKit
 
 protocol AssemblyProtocol {
     func createMovieModule() -> UIViewController
-//    func createMovieDetailModule(movieID: Int) -> UIViewController
+    func createMovieDetailModule(id: Int) -> UIViewController
 }
 
 final class Assembly: AssemblyProtocol {
@@ -20,9 +20,9 @@ final class Assembly: AssemblyProtocol {
         return view
     }
 
-    func createMovieDetailModule(movieID: Int) -> UIViewController {
+    func createMovieDetailModule(id: Int) -> UIViewController {
         let movieAPIservice = MovieAPIService()
-        let viewModel = MovieDetailViewModel(movieID: movieID)
+        let viewModel = MovieDetailViewModel(movieID: id)
         let view = MovieDetailViewController(viewModel: viewModel)
         return view
     }
