@@ -99,6 +99,6 @@ extension MovieDetailViewController: UITableViewDataSource {
 
 extension MovieDetailViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-        300
+        UITableView.automaticDimension
     }
 }
