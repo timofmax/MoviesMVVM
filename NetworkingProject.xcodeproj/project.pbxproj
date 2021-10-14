@@ -155,7 +155,7 @@
 		05B9E80226AF18CC00105F8C = {
 			isa = PBXGroup;
 			children = (
-				05B9E80D26AF18CC00105F8C /* Movies */,
+				05B9E80D26AF18CC00105F8C /* NetworkingProject */,
 				05B9E80C26AF18CC00105F8C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		05B9E80D26AF18CC00105F8C /* Movies */ = {
+		05B9E80D26AF18CC00105F8C /* NetworkingProject */ = {
 			isa = PBXGroup;
 			children = (
 				05B9E80E26AF18CC00105F8C /* AppDelegate.swift */,
@@ -182,7 +182,7 @@
 				05B9E81926AF18CF00105F8C /* LaunchScreen.storyboard */,
 				05B9E81C26AF18CF00105F8C /* Info.plist */,
 			);
-			path = Movies;
+			path = NetworkingProject;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
