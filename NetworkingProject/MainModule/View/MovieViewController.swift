@@ -86,16 +86,12 @@ extension MovieViewController: UITableViewDataSource {
 
 extension MovieViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+//        UITableView.automaticDimension
         300
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let withDetailViewController = MovieDetailViewController()
-//        let detailedViewModel = MovieDetailViewModel(movieID: viewModel.movies[indexPath.row].id)
-
         let movedID = viewModel.movies[indexPath.row].id
         toDetailScreen?(movedID)
-//        withDetailViewController.setupViewModel(viewModel: detailedViewModel)
-//        navigationController?.pushViewController(withDetailViewController, animated: true)
     }
 }

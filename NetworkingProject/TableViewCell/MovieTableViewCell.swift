@@ -76,6 +76,7 @@ final class MovieTableViewCell: UITableViewCell {
 
     private func createPosterConstraint() {
         posterImageView.translatesAutoresizingMaskIntoConstraints = false
+        posterImageView.heightAnchor.constraint(equalToConstant: 300)
         posterImageView.contentMode = .scaleAspectFit
         posterImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
         posterImageView.topAnchor.constraint(equalTo: titleMovieLabel.topAnchor, constant: 0).isActive = true
