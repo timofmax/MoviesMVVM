@@ -5,6 +5,12 @@ import UIKit
 
 /// DetailsViewController
 final class MovieDetailViewController: UIViewController {
+
+    private enum Constants {
+        static let cellQuantity = 2
+    }
+
+
     // MARK: - Public Properties
 
     var movieDetail: MovieDetails?
@@ -66,7 +72,7 @@ final class MovieDetailViewController: UIViewController {
 
 extension MovieDetailViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        2
+        Constants.cellQuantity
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
