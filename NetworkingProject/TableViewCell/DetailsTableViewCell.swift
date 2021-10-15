@@ -68,9 +68,10 @@ final class DetailsTableViewCell: UITableViewCell {
             let backColorView = UIView()
             backColorView.backgroundColor = .clear
             self.titleLabel.text = movieFromInternet.originalTitle
+//            let trailLink = movieFromInternet.backdropPath
             let trailLink = movieFromInternet.backdropPath
-            let tryLink = URL(string: basePosterUrlString + trailLink)
-            guard let url = URL(string: basePosterUrlString + trailLink) else { return }
+            guard let tryLink = trailLink else { return }
+            guard let url = URL(string: basePosterUrlString + tryLink ?? "/3KwAmIKMaDcBMonF5wmyNTL0SR6.jpg") else { return }
             guard let imageData = try? Data(contentsOf: url) else { return }
             self.posterImageView.image = UIImage(data: imageData)
         }
