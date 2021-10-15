@@ -6,4 +6,21 @@
 //
 
 import Foundation
+import UIKit
 
+protocol FileManagerServiceProtocol {
+    func getImageFromCache(url: String) -> UIImage?
+    func saveImageToCache(url: String, image: UIImage)
+}
+
+final class FinalManagerService: FileManagerServiceProtocol {
+    func getImageFromCache(url: String) -> UIImage? {
+        return UIImage()
+    }
+
+    func saveImageToCache(url: String, image: UIImage) {
+        
+    }
+
+
+}
