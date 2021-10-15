@@ -1,9 +1,6 @@
-//
 //  Repository.swift
 //  NetworkingProject
-//
-//  Created by Timofey Privalov on 15.10.2021.
-//
+
 
 import Foundation
 
