@@ -5,14 +5,21 @@
 //  Created by Timofey Privalov on 13.10.2021.
 //
 
-import Foundation
+import UIKit
 
 protocol ImageAPIServiceProtocol {
     func downloadDetailedMovies(id: Int, complition: @escaping ((MovieDetails)->()))
 }
 
+typealias HandlerImage = ((UIImage)->())
+
 final class ImageAPIService: ImageAPIServiceProtocol {
 
+    func loadImage(url: URL, handler: @escaping HandlerImage) {
+        guard let imageData = try? Data(contentsOf: url) else { return }
+        guard let image = UIImage(data: imageData) else { return }
+        handler(image)
+    }
 
     // MARK: - Public methods
     func downloadDetailedMovies(id: Int, complition: @escaping ((MovieDetails)->())) {

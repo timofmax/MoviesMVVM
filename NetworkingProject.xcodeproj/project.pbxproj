@@ -14,6 +14,8 @@
 		057B42252719A8CB00627FDB /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 057B42242719A8CB00627FDB /* RealmSwift */; };
 		057B422A2719B42E00627FDB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B42292719B42E00627FDB /* Repository.swift */; };
 		057B422E2719BA9E00627FDB /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B422D2719BA9E00627FDB /* RealmRepository.swift */; };
+		057B4239271A25E200627FDB /* FileManagerServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B4238271A25E200627FDB /* FileManagerServiceProtocol.swift */; };
+		057B4240271A277C00627FDB /* UITableViewCell + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B423F271A277C00627FDB /* UITableViewCell + Extension.swift */; };
 		0589837226B09BFD00BF8BE1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589837126B09BFD00BF8BE1 /* Movie.swift */; };
 		059A911826B1716400FF27E9 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A911726B1716400FF27E9 /* MovieTableViewCell.swift */; };
 		059AE00C26B44DC7006B76E1 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AE00B26B44DC6006B76E1 /* MovieDetails.swift */; };
@@ -50,6 +52,8 @@
 		054AC50F2717156A009F3883 /* ImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIService.swift; sourceTree = "<group>"; };
 		057B42292719B42E00627FDB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		057B422D2719BA9E00627FDB /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		057B4238271A25E200627FDB /* FileManagerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerServiceProtocol.swift; sourceTree = "<group>"; };
+		057B423F271A277C00627FDB /* UITableViewCell + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell + Extension.swift"; sourceTree = "<group>"; };
 		0589837126B09BFD00BF8BE1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		059A911726B1716400FF27E9 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		059AE00B26B44DC6006B76E1 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 		051873122716089400F5F339 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				057B4237271A25CC00627FDB /* ImageManager */,
 				057B42282719B41000627FDB /* DataStorage */,
 				051873132716089F00F5F339 /* APIService */,
 			);
@@ -133,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				059AE00F26B4892C006B76E1 /* MovieAPIService.swift */,
-				054AC50F2717156A009F3883 /* ImageAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -181,6 +185,23 @@
 			path = DataStorage;
 			sourceTree = "<group>";
 		};
+		057B4237271A25CC00627FDB /* ImageManager */ = {
+			isa = PBXGroup;
+			children = (
+				054AC50F2717156A009F3883 /* ImageAPIService.swift */,
+				057B4238271A25E200627FDB /* FileManagerServiceProtocol.swift */,
+			);
+			path = ImageManager;
+			sourceTree = "<group>";
+		};
+		057B423E271A275800627FDB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				057B423F271A277C00627FDB /* UITableViewCell + Extension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		0589836F26B095F600BF8BE1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,6 +240,7 @@
 				0518730C271607D700F5F339 /* DetailModule */,
 				059A911626B1712E00FF27E9 /* TableViewCell */,
 				05B9E81426AF18CC00105F8C /* Main.storyboard */,
+				057B423E271A275800627FDB /* Helpers */,
 				05B9E81726AF18CF00105F8C /* Assets.xcassets */,
 				05B9E81926AF18CF00105F8C /* LaunchScreen.storyboard */,
 				05B9E81C26AF18CF00105F8C /* Info.plist */,
@@ -403,6 +425,7 @@
 			files = (
 				05CE07F327188DEB00B1ACB4 /* MainCoordinator.swift in Sources */,
 				054AC5102717156A009F3883 /* ImageAPIService.swift in Sources */,
+				057B4239271A25E200627FDB /* FileManagerServiceProtocol.swift in Sources */,
 				059AE01026B4892C006B76E1 /* MovieAPIService.swift in Sources */,
 				05B9E81326AF18CC00105F8C /* MovieViewController.swift in Sources */,
 				05CE07E527186ABA00B1ACB4 /* Assembly.swift in Sources */,
@@ -415,6 +438,7 @@
 				05CE07EC271887ED00B1ACB4 /* BaseCoordinator.swift in Sources */,
 				05A64C7126B3279E005CD0BF /* MovieDetailViewController.swift in Sources */,
 				057B422E2719BA9E00627FDB /* RealmRepository.swift in Sources */,
+				057B4240271A277C00627FDB /* UITableViewCell + Extension.swift in Sources */,
 				0589837226B09BFD00BF8BE1 /* Movie.swift in Sources */,
 				05A64C7626B33085005CD0BF /* DetailsTableViewCell.swift in Sources */,
 				0534CA2E2714F2BB009A0654 /* MainScreenViewModel.swift in Sources */,
