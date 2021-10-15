@@ -57,7 +57,7 @@
 		05A64C7026B3279E005CD0BF /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		05A64C7526B33085005CD0BF /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		05A64C7826B33C6E005CD0BF /* SpecificDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecificDetailsTableViewCell.swift; sourceTree = "<group>"; };
-		05B9E80B26AF18CC00105F8C /* NetworkingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		05B9E80B26AF18CC00105F8C /* NetworkingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = NetworkingProject.app; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/NetworkingProject.app"; sourceTree = "<absolute>"; };
 		05B9E80E26AF18CC00105F8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		05B9E81026AF18CC00105F8C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		05B9E81226AF18CC00105F8C /* MovieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewController.swift; sourceTree = "<group>"; };
@@ -69,7 +69,7 @@
 		05CE07EB271887ED00B1ACB4 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		05CE07EE2718891C00B1ACB4 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		05CE07F227188DEB00B1ACB4 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		05E247D02718A69B00956E89 /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		05E247D02718A69B00956E89 /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesTest.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesTest.xctest"; sourceTree = "<absolute>"; };
 		05E247D22718A69B00956E89 /* MoviesTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesTest.swift; sourceTree = "<group>"; };
 		05E247D42718A69B00956E89 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,17 +204,7 @@
 			children = (
 				05B9E80D26AF18CC00105F8C /* NetworkingProject */,
 				05E247D12718A69B00956E89 /* MoviesTest */,
-				05B9E80C26AF18CC00105F8C /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		05B9E80C26AF18CC00105F8C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				05B9E80B26AF18CC00105F8C /* NetworkingProject.app */,
-				05E247D02718A69B00956E89 /* MoviesTest.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		05B9E80D26AF18CC00105F8C /* NetworkingProject */ = {
@@ -337,7 +327,7 @@
 			packageReferences = (
 				057B42212719A8CB00627FDB /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 			);
-			productRefGroup = 05B9E80C26AF18CC00105F8C /* Products */;
+			productRefGroup = 05B9E80226AF18CC00105F8C;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
