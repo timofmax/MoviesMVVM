@@ -17,17 +17,19 @@ struct IncomingJson: Decodable {
 }
 
 /// MoviesFavorite
-//@objc final class Movie: Object, Codable {
-//
-//
-//}
-
-///Movie
-struct Movie: Decodable {
-    let overview: String
-    let posterPath: String
-    let title: String
-    let voteAverage: Double
-    let id: Int
+@objc final class Movie: Object, Codable {
+    /// id фильма
+    @objc dynamic var id = Int()
+    /// обзор фильма
+    @objc dynamic var overview = String()
+    /// постер фильма
+    @objc dynamic var posterPath = String()
+    /// название фильма
+    @objc dynamic var title = String()
+    /// рейтинг фильма
+    @objc dynamic var voteAverage = Double()
+    /// уникальный id для db
+    override class func primaryKey() -> String? {
+        "id"
+    }
 }
-
