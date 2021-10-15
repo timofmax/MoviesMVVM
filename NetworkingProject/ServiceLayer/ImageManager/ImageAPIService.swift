@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ImageAPIServiceProtocol {
+    func loadImage(url: URL, handler: @escaping HandlerImage)
     func downloadDetailedMovies(id: Int, complition: @escaping ((MovieDetails)->()))
 }
 

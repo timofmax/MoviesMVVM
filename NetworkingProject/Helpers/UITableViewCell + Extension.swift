@@ -7,10 +7,16 @@
 
 import UIKit
 
-//extension UITableViewCell {
-//    func loadImage()
-//
-//}
+extension UITableViewCell {
+    func loadImage(url: URL) -> UIImage? {
+        let imageAPIService = ImageAPIService()
+        var image: UIImage?
+        imageAPIService.loadImage(url: url) { result in
+            image = result
+        }
+        return image
+    }
+}
 
 
 /*

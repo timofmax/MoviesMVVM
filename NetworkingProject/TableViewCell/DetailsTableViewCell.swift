@@ -71,8 +71,11 @@ final class DetailsTableViewCell: UITableViewCell {
             let trailLink = movieFromInternet.backdropPath
             guard let tryLink = trailLink else { return }
             guard let url = URL(string: basePosterUrlString + tryLink ?? "/3KwAmIKMaDcBMonF5wmyNTL0SR6.jpg") else { return }
+            guard let posterImage = self.loadImage(url: url) else { return }
+            self.posterImageView.image = posterImage
+
             guard let imageData = try? Data(contentsOf: url) else { return }
-            self.posterImageView.image = UIImage(data: imageData)
+//            self.posterImageView.image = UIImage(data: imageData)
         }
     }
 }
