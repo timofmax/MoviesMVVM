@@ -2,6 +2,7 @@
 // Copyright © RoadMap. All rights reserved.
 
 import Foundation
+import RealmSwift
 
 /// ViewData
 enum ViewData {
@@ -16,15 +17,17 @@ struct IncomingJson: Decodable {
 }
 
 /// MoviesFavorite
+//@objc final class Movie: Object, Codable {
+//
+//
+//}
+
+///Movie
 struct Movie: Decodable {
-    let adult: Bool
     let overview: String
     let posterPath: String
-    let backdropPath: String
     let title: String
     let voteAverage: Double
     let id: Int
-    let revenue: Double?
-    let releaseDate: String?
-    let budget: Double?
 }
+
