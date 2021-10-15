@@ -1,7 +1,4 @@
 //
-//  RealmRepository.swift
-//  NetworkingProject
-//
 //  Created by Timofey Privalov on 15.10.2021.
 //
 
@@ -39,5 +36,9 @@ final class RealmRepository<RealmEntity: Object>: Repository<RealmEntity> {
         } catch {
             return []
         }
+    }
+
+    private func getPredicate(format: String, filter: CVarArg) -> NSPredicate {
+        NSPredicate(format: format, filter)
     }
 }
