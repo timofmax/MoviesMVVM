@@ -22,6 +22,7 @@ final class MovieDetailViewModel: MovieDetailViewModelProtocol {
     // MARK: - Private Properties
 //    private var movieAPIService: MovieAPIServiceProtocol = MovieAPIService
     private var movieAPIService: MovieAPIServiceProtocol?
+    private var repository: Repository<MovieRealm>?
     // MARK: - Lifecycle
     init(movieAPIService: MovieAPIServiceProtocol, movieID: Int) {
         self.movieAPIService = movieAPIService
