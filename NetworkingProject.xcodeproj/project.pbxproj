@@ -131,19 +131,11 @@
 		051873122716089400F5F339 /* ServiceLayer */ = {
 			isa = PBXGroup;
 			children = (
+				059AE00F26B4892C006B76E1 /* MovieAPIService.swift */,
 				057B4237271A25CC00627FDB /* ImageManager */,
 				057B42282719B41000627FDB /* DataStorage */,
-				051873132716089F00F5F339 /* APIService */,
 			);
 			path = ServiceLayer;
-			sourceTree = "<group>";
-		};
-		051873132716089F00F5F339 /* APIService */ = {
-			isa = PBXGroup;
-			children = (
-				059AE00F26B4892C006B76E1 /* MovieAPIService.swift */,
-			);
-			path = APIService;
 			sourceTree = "<group>";
 		};
 		0534CA272714F1D0009A0654 /* MainModule */ = {
