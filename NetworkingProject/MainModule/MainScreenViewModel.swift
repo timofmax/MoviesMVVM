@@ -34,8 +34,9 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
     // MARK: - Private Method
     private func fetchMovies() {
         let savedMovies = repository?.get()
-        guard let movies = savedMovies else { return }
-        if !(movies.isEmpty) {
+        guard let moviesDB = savedMovies else { return }
+        if !(moviesDB.isEmpty) {
+            movies = moviesDB
             updateViewData?()
             return
         }
@@ -47,9 +48,5 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
                 self?.updateViewData?()
             }
         }
-
-        
-
-
     }
  }

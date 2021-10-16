@@ -29,8 +29,8 @@ final class MovieViewController: UIViewController {
         moviesTableView.delegate = self
         moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "myCell")
         setView()
-        updateViewController()
         viewModel.getData()
+        updateViewController()
     }
 
     // MARK: - Private Methods
