@@ -5,14 +5,14 @@ import Foundation
 import UIKit
 
 protocol MovieAPIServiceProtocol {
-    func fetMovies(complition: @escaping (([Movie])->()))
+    func fetMovies(complition: @escaping (([MovieRealm])->()))
     func fetchDetailsFromAPI(id: Int, complition: @escaping ((MovieDetails?)->()))
 }
 
 /// MovieAPIService
 final class MovieAPIService: MovieAPIServiceProtocol {
     
-    func fetMovies(complition: @escaping (([Movie])->())) {
+    func fetMovies(complition: @escaping (([MovieRealm])->())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let urlMovie =

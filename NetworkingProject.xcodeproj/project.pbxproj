@@ -18,7 +18,7 @@
 		057B4240271A277C00627FDB /* UITableViewCell + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B423F271A277C00627FDB /* UITableViewCell + Extension.swift */; };
 		057B424D271A3A2400627FDB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B424C271A3A2400627FDB /* ImageService.swift */; };
 		057B4255271AE4B600627FDB /* Proxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B4254271AE4B600627FDB /* Proxy.swift */; };
-		0589837226B09BFD00BF8BE1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589837126B09BFD00BF8BE1 /* Movie.swift */; };
+		0589837226B09BFD00BF8BE1 /* MovieRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0589837126B09BFD00BF8BE1 /* MovieRealm.swift */; };
 		059A911826B1716400FF27E9 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059A911726B1716400FF27E9 /* MovieTableViewCell.swift */; };
 		059AE00C26B44DC7006B76E1 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AE00B26B44DC6006B76E1 /* MovieDetails.swift */; };
 		059AE01026B4892C006B76E1 /* MovieAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059AE00F26B4892C006B76E1 /* MovieAPIService.swift */; };
@@ -57,10 +57,10 @@
 		057B4238271A25E200627FDB /* FileManagerServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerServiceProtocol.swift; sourceTree = "<group>"; };
 		057B423F271A277C00627FDB /* UITableViewCell + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell + Extension.swift"; sourceTree = "<group>"; };
 		057B4245271A28B400627FDB /* NetworkingProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkingProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		057B424B271A387000627FDB /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesTest.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesTest.xctest"; sourceTree = "<absolute>"; };
 		057B424C271A3A2400627FDB /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		057B4254271AE4B600627FDB /* Proxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Proxy.swift; sourceTree = "<group>"; };
-		0589837126B09BFD00BF8BE1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		057B425F271B200200627FDB /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0589837126B09BFD00BF8BE1 /* MovieRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieRealm.swift; sourceTree = "<group>"; };
 		059A911726B1716400FF27E9 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		059AE00B26B44DC6006B76E1 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		059AE00F26B4892C006B76E1 /* MovieAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieAPIService.swift; sourceTree = "<group>"; };
@@ -159,7 +159,7 @@
 		0534CA2A2714F1F2009A0654 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0589837126B09BFD00BF8BE1 /* Movie.swift */,
+				0589837126B09BFD00BF8BE1 /* MovieRealm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -224,6 +224,7 @@
 				05B9E80D26AF18CC00105F8C /* NetworkingProject */,
 				05E247D12718A69B00956E89 /* MoviesTest */,
 				057B4245271A28B400627FDB /* NetworkingProject.app */,
+				057B425F271B200200627FDB /* MoviesTest.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -315,7 +316,7 @@
 			);
 			name = MoviesTest;
 			productName = MoviesTest;
-			productReference = 057B424B271A387000627FDB /* MoviesTest.xctest */;
+			productReference = 057B425F271B200200627FDB /* MoviesTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -440,7 +441,7 @@
 				05A64C7126B3279E005CD0BF /* MovieDetailViewController.swift in Sources */,
 				057B422E2719BA9E00627FDB /* RealmRepository.swift in Sources */,
 				057B4240271A277C00627FDB /* UITableViewCell + Extension.swift in Sources */,
-				0589837226B09BFD00BF8BE1 /* Movie.swift in Sources */,
+				0589837226B09BFD00BF8BE1 /* MovieRealm.swift in Sources */,
 				05A64C7626B33085005CD0BF /* DetailsTableViewCell.swift in Sources */,
 				0534CA2E2714F2BB009A0654 /* MainScreenViewModel.swift in Sources */,
 				05CE07EF2718891C00B1ACB4 /* ApplicationCoordinator.swift in Sources */,

@@ -7,17 +7,17 @@ import RealmSwift
 /// ViewData
 enum ViewData {
     case loading
-    case loaded([Movie])
+    case loaded([MovieRealm])
     case failure(description: String?, onReload: () -> ())
 }
 
 /// MoviesFavorite
 struct IncomingJson: Decodable {
-    let results: [Movie]
+    let results: [MovieRealm]
 }
 
 /// MoviesFavorite
-@objc final class Movie: Object, Codable {
+@objc final class MovieRealm: Object, Codable {
     /// id фильма
     @objc dynamic var id = Int()
     /// обзор фильма

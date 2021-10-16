@@ -107,7 +107,7 @@ final class MovieTableViewCell: UITableViewCell {
         overviewLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
     }
 
-    func configCell(movie: Movie) {
+    func configCell(movie: MovieRealm) {
         let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
         let backColorView = UIView()
         backColorView.backgroundColor = .clear

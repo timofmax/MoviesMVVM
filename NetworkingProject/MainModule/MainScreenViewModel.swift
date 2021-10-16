@@ -11,21 +11,23 @@ typealias VoidHandler = (() -> ())
 
 protocol MainScreenViewModelProtocol {
     func getData()
-    var movies: [Movie] { get set }
+    var movies: [MovieRealm] { get set }
     var updateView: VoidHandler? { get set }
 }
 
 final class MainScreenViewModel: MainScreenViewModelProtocol {
     // MARK: - Public Properties
     var updateView: VoidHandler?
-    var movies: [Movie] = []
+    var movies: [MovieRealm] = []
 
     // MARK: - Private Properties
     private var movieAPIService: MovieAPIServiceProtocol?
+//    private var repository: Repository<re>?
 
     // MARK: - Lifecycle Method
     init(movieAPIService: MovieAPIServiceProtocol) {
         self.movieAPIService = movieAPIService
+//        self.repository = repository
     }
 
     // MARK: - Public Method
