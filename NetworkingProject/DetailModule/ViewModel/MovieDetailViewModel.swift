@@ -20,7 +20,6 @@ final class MovieDetailViewModel: MovieDetailViewModelProtocol {
     var updateViewData: VoidHandler?
     var id: Int?
     // MARK: - Private Properties
-//    private var movieAPIService: MovieAPIServiceProtocol = MovieAPIService
     private var movieAPIService: MovieAPIServiceProtocol?
     private var repository: Repository<MovieDetailRealm>?
     // MARK: - Lifecycle
@@ -36,11 +35,24 @@ final class MovieDetailViewModel: MovieDetailViewModelProtocol {
 
     // MARK: - Private Methods
     private func fetchDetailData(filmID: Int) {
-        guard let movieAPIService = movieAPIService else { return }
-        movieAPIService.fetchDetailsFromAPI(id: filmID) { [ weak self ] result in
-            self?.movieDetail = result
-            self?.updateViewData?()
+        let requestPredicate = NSPredicate(format: "id = \(filmID)")
+
+        let cacheMovie = repository?.getDetail(predicate: requestPredicate)
+
+        if !(cacheMovie?.isEmpty ?? true) {
+            guard let cacheMovie = cacheMovie else { return }
+            movieDetail = cacheMovie.first
+            return
+        }
+
+        movieAPIService?.fetchDetailsFromAPI(id: filmID) { [ weak self ] result in
+            DispatchQueue.main.async {
+                result?.id = filmID
+                self?.movieDetail = result
+                guard let movies = result else { return }
+                self?.repository?.save(object: [movies])
+                self?.updateViewData?()
+            }
         }
     }
-
 }

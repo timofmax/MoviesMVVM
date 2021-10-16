@@ -103,11 +103,13 @@ final class SpecificDetailsTableViewCell: UITableViewCell {
     }
 
     func innerCellConfigure(movie: MovieDetailRealm) {
-        self.overviewLabel.text = movie.overview
+        selectionStyle = .none
         self.backgroundColor = .black
+        self.overviewLabel.text = movie.overview
         self.budgetLabel.text = "💵 \(movie.budget)"
         self.revenueLabel.text = "💵 \(movie.revenue)"
-        self.movieDateLabel.text = "\(movie.releaseDate)"
+        guard let releaseDate = movie.releaseDate else { return }
+        self.movieDateLabel.text = "\(releaseDate)"
     }
 
 }

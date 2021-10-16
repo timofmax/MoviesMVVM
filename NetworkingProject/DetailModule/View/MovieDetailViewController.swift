@@ -19,12 +19,14 @@ final class MovieDetailViewController: UIViewController {
 
     private let detailsTableView = UITableView()
     private var viewModel: MovieDetailViewModelProtocol?
+    private var id = Int()
 
     // MARK: - Lifecycle methods
 
-    convenience init(viewModel: MovieDetailViewModelProtocol) {
+    convenience init(viewModel: MovieDetailViewModelProtocol, id: Int) {
         self.init()
         self.viewModel = viewModel
+        self.id = id
     }
 
     override func viewDidLoad() {
@@ -55,7 +57,7 @@ final class MovieDetailViewController: UIViewController {
         detailsTableView.register(SpecificDetailsTableViewCell.self, forCellReuseIdentifier: "specificID")
         view.backgroundColor = .black
         createTable()
-        viewModel?.fetchMoviesFromViewModel(id: viewModel?.id ?? 0)
+        viewModel?.fetchMoviesFromViewModel(id: id)
     }
 
     private func createTable() {
@@ -82,7 +84,8 @@ extension MovieDetailViewController: UITableViewDataSource {
             guard let cell = detailsTableView
                     .dequeueReusableCell(withIdentifier: "detailID", for: indexPath) as? DetailsTableViewCell
             else { return UITableViewCell() }
-            cell.configInCell(id: viewModel?.id ?? 0)
+            guard let movieDetail = viewModel?.movieDetail else { return UITableViewCell() }
+            cell.configInCell(movie: movieDetail)
             return cell
         case 1:
         super.viewDidLoad()
@@ -105,7 +108,6 @@ extension MovieDetailViewController: UITableViewDataSource {
 
 extension MovieDetailViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-//        UITableView.automaticDimension
         300
     }
 }

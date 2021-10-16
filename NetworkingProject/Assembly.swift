@@ -25,7 +25,7 @@ final class Assembly: AssemblyProtocol {
         let movieAPIservice = MovieAPIService()
         let repository = RealmRepository<MovieDetailRealm>()
         let viewModel = MovieDetailViewModel(movieAPIService: movieAPIservice, repository: repository)
-        let view = MovieDetailViewController(viewModel: viewModel)
+        let view = MovieDetailViewController(viewModel: viewModel, id: id)
         return view
     }
 }

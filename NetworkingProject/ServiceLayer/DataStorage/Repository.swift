@@ -7,6 +7,7 @@ protocol RepositoryProtocol: AnyObject {
     associatedtype Entity
 //    func get(predicate: NSPredicate) -> [Entity]
     func get() -> [Entity]
+    func getDetail(predicate: NSPredicate) -> [Entity]
     func save(object: [Entity])
     func removeAll()
 }
@@ -21,7 +22,7 @@ class Repository<DataBaseEntity>: RepositoryProtocol {
         fatalError("")
     }
 
-    func getDetail(format: String, filter: CVarArg) -> [Entity] {
+    func getDetail(predicate: NSPredicate) -> [Entity] {
         fatalError("")
     }
 
