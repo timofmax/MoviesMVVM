@@ -67,17 +67,5 @@ final class DetailsTableViewCell: UITableViewCell {
         backgroundColor = .black
         titleLabel.text = movie.originalTitle
         loadImage(path: movie.backdropPath, imageView: posterImageView)
-
-//        imageAPIService.downloadDetailedMovies(id: id) { movieFromInternet in
-//            let basePosterUrlString = "https://image.tmdb.org/t/p/w500"
-//            let backColorView = UIView()
-//            backColorView.backgroundColor = .clear
-//            self.titleLabel.text = movieFromInternet.originalTitle
-//            let trailLink = movieFromInternet.backdropPath
-//            guard let tryLink = trailLink else { return }
-//            guard let url = URL(string: basePosterUrlString + tryLink ?? "/3KwAmIKMaDcBMonF5wmyNTL0SR6.jpg") else { return }
-//            guard let posterImage = self.loadAPIImage(url: url) else { return }
-//            self.posterImageView.image = posterImage
-//        }
     }
 }
