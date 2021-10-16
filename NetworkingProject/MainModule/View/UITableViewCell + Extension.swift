@@ -8,7 +8,19 @@
 import UIKit
 
 extension UITableViewCell {
-    func loadImage(url: URL) -> UIImage? {
+    func loadImage(path: String?, imageView: UIImageView?) {
+        var staticPath = "https://image.tmdb.org/t/p/w500/"
+        guard let path = path,
+              let url = URL(string: staticPath + path) else { return }
+        let imageService = ImageService()
+
+        imageService.getImage(url: url) { [ weak self] result in
+            imageView?.image = result
+        }
+    }
+
+
+    func loadAPIImage(url: URL) -> UIImage? {
         let imageAPIService = ImageAPIService()
         var image: UIImage?
         imageAPIService.loadImage(url: url) { result in

@@ -40,7 +40,6 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
             updateViewData?()
             return
         }
-
         movieAPIService?.fetMovies { [ weak self ] moviesFromApiService in
             DispatchQueue.main.async {
                 self?.movies = moviesFromApiService

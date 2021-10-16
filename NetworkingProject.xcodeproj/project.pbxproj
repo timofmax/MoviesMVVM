@@ -152,6 +152,8 @@
 			isa = PBXGroup;
 			children = (
 				05B9E81226AF18CC00105F8C /* MovieViewController.swift */,
+				059A911726B1716400FF27E9 /* MovieTableViewCell.swift */,
+				057B423F271A277C00627FDB /* UITableViewCell + Extension.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,7 +197,6 @@
 		057B423E271A275800627FDB /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				057B423F271A277C00627FDB /* UITableViewCell + Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -211,7 +212,6 @@
 		059A911626B1712E00FF27E9 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				059A911726B1716400FF27E9 /* MovieTableViewCell.swift */,
 				05A64C7526B33085005CD0BF /* DetailsTableViewCell.swift */,
 				05A64C7826B33C6E005CD0BF /* SpecificDetailsTableViewCell.swift */,
 			);

@@ -26,9 +26,8 @@ final class Proxy: LoadImageProtocol {
 
         if image == nil {
             imageAPIService?.loadImage(url: url) { result in
-                guard let img = image else { return }
-                self.fileManagerService?.saveImageToCache(url: url.absoluteString, image: img)
-                completion(img)
+                self.fileManagerService?.saveImageToCache(url: url.absoluteString, image: result)
+                completion(result)
             }
         } else {
             guard let image = image else { return }

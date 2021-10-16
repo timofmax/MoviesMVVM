@@ -13,7 +13,7 @@ protocol FileManagerServiceProtocol {
     func saveImageToCache(url: String, image: UIImage)
 }
 
-final class FinalManagerService: FileManagerServiceProtocol {
+final class FileManagerService: FileManagerServiceProtocol {
     // MARK: - Private Properties
     private var images = [String: UIImage]()
     private let cacheLifeTime: TimeInterval = 30 * 24 * 60 * 60
@@ -21,9 +21,7 @@ final class FinalManagerService: FileManagerServiceProtocol {
         let pathName = "images"
         guard let cacheDirectory = FileManager.default.urls(for: .cachesDirectory, in: .allDomainsMask).first
         else { return pathName }
-
         let url = cacheDirectory.appendingPathComponent(pathName, isDirectory: true)
-
         if !FileManager.default.fileExists(atPath: url.path) {
             try? FileManager.default.createDirectory(at: url, withIntermediateDirectories: true, attributes: nil)
         }
@@ -58,6 +56,6 @@ final class FinalManagerService: FileManagerServiceProtocol {
         guard let cacheDirectory = FileManager.default.urls(for: .cachesDirectory, in: .allDomainsMask).first
         else { return nil }
         let hashName = url.split(separator: "/").last ?? "default"
-        return cacheDirectory.appendingPathComponent(FinalManagerService.pathname + "/" + hashName).path
+        return cacheDirectory.appendingPathComponent(FileManagerService.pathname + "/" + hashName).path
     }
 }

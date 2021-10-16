@@ -17,9 +17,11 @@ typealias HandlerImage = ((UIImage)->())
 final class ImageAPIService: ImageAPIServiceProtocol {
 
     func loadImage(url: URL, handler: @escaping HandlerImage) {
-        guard let imageData = try? Data(contentsOf: url) else { return }
-        guard let image = UIImage(data: imageData) else { return }
-        handler(image)
+        DispatchQueue.main.async {
+            guard let imageData = try? Data(contentsOf: url) else { return }
+            guard let image = UIImage(data: imageData) else { return }
+            handler(image)
+        }
     }
 
     // MARK: - Public methods
