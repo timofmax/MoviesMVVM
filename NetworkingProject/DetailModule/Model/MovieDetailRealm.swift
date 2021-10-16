@@ -5,25 +5,13 @@ import Foundation
 import RealmSwift
 
 ///  - MovieDetails
-/*
-struct MovieDetails: Decodable {
-    let backdropPath: String
-    let budget: Int
-    let id: Int
-    let overview: String
-    let originalTitle: String
-    let posterPath: String
-    let releaseDate: String
-    let revenue: Int
-}
-*/
 
 
-@objc final class MovieDetails: Object, Codable {
+@objc final class MovieDetailRealm: Object, Codable {
     // MARK: - Public Properties
 
     /// id фильма
-    @objc dynamic var id: Int
+    @objc dynamic var id: Int = Int()
     /// бюджет фильма
     @objc dynamic var budget = Int()
     /// зарабаток фильма
@@ -39,7 +27,7 @@ struct MovieDetails: Decodable {
     /// дата выхода фильма
     @objc dynamic var releaseDate: String?
     /// уникальный ключ для дб
-    override class func primaryKey() -> String {
+    override class func primaryKey() -> String? {
         "id"
     }
 }

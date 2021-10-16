@@ -9,7 +9,7 @@ import UIKit
 
 protocol ImageAPIServiceProtocol {
     func loadImage(url: URL, handler: @escaping HandlerImage)
-    func downloadDetailedMovies(id: Int, complition: @escaping ((MovieDetails)->()))
+    func downloadDetailedMovies(id: Int, complition: @escaping ((MovieDetailRealm)->()))
 }
 
 typealias HandlerImage = ((UIImage)->())
@@ -25,7 +25,7 @@ final class ImageAPIService: ImageAPIServiceProtocol {
     }
 
     // MARK: - Public methods
-    func downloadDetailedMovies(id: Int, complition: @escaping ((MovieDetails)->())) {
+    func downloadDetailedMovies(id: Int, complition: @escaping ((MovieDetailRealm)->())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let jsonUrlString =
@@ -34,7 +34,7 @@ final class ImageAPIService: ImageAPIServiceProtocol {
         let session = URLSession.shared.dataTask(with: url) { [self] data, _, error in
             guard let data = data else { return }
             do {
-                let specifiMovie = try decoder.decode(MovieDetails.self, from: data)
+                let specifiMovie = try decoder.decode(MovieDetailRealm.self, from: data)
                 DispatchQueue.main.async {
                     complition(specifiMovie)
                 }

@@ -6,7 +6,7 @@ import UIKit
 
 protocol MovieAPIServiceProtocol {
     func fetMovies(complition: @escaping (([MovieRealm])->()))
-    func fetchDetailsFromAPI(id: Int, complition: @escaping ((MovieDetails?)->()))
+    func fetchDetailsFromAPI(id: Int, complition: @escaping ((MovieDetailRealm?)->()))
 }
 
 /// MovieAPIService
@@ -30,7 +30,7 @@ final class MovieAPIService: MovieAPIServiceProtocol {
         }.resume()
     }
 
-    func fetchDetailsFromAPI(id: Int, complition: @escaping ((MovieDetails?)->())) {
+    func fetchDetailsFromAPI(id: Int, complition: @escaping ((MovieDetailRealm?)->())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let jsonUrlString =
@@ -39,7 +39,7 @@ final class MovieAPIService: MovieAPIServiceProtocol {
         let session = URLSession.shared.dataTask(with: url) { [self] data, _, error in
             guard let data = data else { return }
             do {
-                let incomingData = try decoder.decode(MovieDetails.self, from: data)
+                let incomingData = try decoder.decode(MovieDetailRealm.self, from: data)
                 complition(incomingData)
             } catch {
                 print("\(error)")

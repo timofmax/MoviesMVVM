@@ -13,7 +13,7 @@ final class MovieDetailViewController: UIViewController {
 
     // MARK: - Public Properties
 
-    var movieDetail: MovieDetails?
+    var movieDetail: MovieDetailRealm?
 
     // MARK: - Private Properties
 
