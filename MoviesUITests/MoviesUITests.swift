@@ -7,7 +7,6 @@
 
 import XCTest
 
-
 class MoviesUITests: XCTestCase {
     var application: XCUIApplication!
 
