@@ -32,6 +32,8 @@
 		05B9E81626AF18CC00105F8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B9E81426AF18CC00105F8C /* Main.storyboard */; };
 		05B9E81826AF18CF00105F8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05B9E81726AF18CF00105F8C /* Assets.xcassets */; };
 		05B9E81B26AF18CF00105F8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05B9E81926AF18CF00105F8C /* LaunchScreen.storyboard */; };
+		05BED85A271CBA590078E9F5 /* MovieDetailViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BED859271CBA580078E9F5 /* MovieDetailViewModelTest.swift */; };
+		05BED85E271CC0EA0078E9F5 /* DataStorageTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BED85D271CC0EA0078E9F5 /* DataStorageTest.swift */; };
 		05CE07E527186ABA00B1ACB4 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE07E427186ABA00B1ACB4 /* Assembly.swift */; };
 		05CE07EC271887ED00B1ACB4 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE07EB271887ED00B1ACB4 /* BaseCoordinator.swift */; };
 		05CE07EF2718891C00B1ACB4 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CE07EE2718891C00B1ACB4 /* ApplicationCoordinator.swift */; };
@@ -76,6 +78,8 @@
 		05B9E81726AF18CF00105F8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05B9E81A26AF18CF00105F8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		05B9E81C26AF18CF00105F8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		05BED859271CBA580078E9F5 /* MovieDetailViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModelTest.swift; sourceTree = "<group>"; };
+		05BED85D271CC0EA0078E9F5 /* DataStorageTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTest.swift; sourceTree = "<group>"; };
 		05CE07E427186ABA00B1ACB4 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
 		05CE07EB271887ED00B1ACB4 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		05CE07EE2718891C00B1ACB4 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
@@ -265,6 +269,8 @@
 			children = (
 				05E247D22718A69B00956E89 /* MoviesTest.swift */,
 				05001825271C8F2C00F3A179 /* MoviesVewModelTest.swift */,
+				05BED859271CBA580078E9F5 /* MovieDetailViewModelTest.swift */,
+				05BED85D271CC0EA0078E9F5 /* DataStorageTest.swift */,
 				05E247D42718A69B00956E89 /* Info.plist */,
 			);
 			path = MoviesTest;
@@ -449,7 +455,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				05E247D32718A69B00956E89 /* MoviesTest.swift in Sources */,
+				05BED85A271CBA590078E9F5 /* MovieDetailViewModelTest.swift in Sources */,
 				05001826271C8F2C00F3A179 /* MoviesVewModelTest.swift in Sources */,
+				05BED85E271CC0EA0078E9F5 /* DataStorageTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
