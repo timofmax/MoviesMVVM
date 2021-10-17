@@ -1,7 +1,3 @@
-//
-//  MainViewModel.swift
-//  NetworkingProject
-//
 //  Created by Timofey Privalov on 12.10.2021.
 // Testing git stash!
 
@@ -11,21 +7,23 @@ typealias VoidHandler = (() -> ())
 
 protocol MainScreenViewModelProtocol {
     func getData()
-    var movies: [Movie] { get set }
-    var updateView: VoidHandler? { get set }
+    var movies: [MovieRealm]? { get set }
+    var updateViewData: (()->())? { get set }
 }
 
 final class MainScreenViewModel: MainScreenViewModelProtocol {
     // MARK: - Public Properties
-    var updateView: VoidHandler?
-    var movies: [Movie] = []
+    var updateViewData: (()->())?
+    var movies: [MovieRealm]? = []
 
     // MARK: - Private Properties
     private var movieAPIService: MovieAPIServiceProtocol?
+    private var repository: Repository<MovieRealm>?
 
     // MARK: - Lifecycle Method
-    init(movieAPIService: MovieAPIServiceProtocol) {
+    init(movieAPIService: MovieAPIServiceProtocol, repository: Repository<MovieRealm>?) {
         self.movieAPIService = movieAPIService
+        self.repository = repository
     }
 
     // MARK: - Public Method
@@ -35,9 +33,19 @@ final class MainScreenViewModel: MainScreenViewModelProtocol {
 
     // MARK: - Private Method
     private func fetchMovies() {
+        let savedMovies = repository?.get()
+        guard let moviesDB = savedMovies else { return }
+        if !(moviesDB.isEmpty) {
+            movies = moviesDB
+            updateViewData?()
+            return
+        }
         movieAPIService?.fetMovies { [ weak self ] moviesFromApiService in
-            self?.movies = moviesFromApiService
-            self?.updateView?()
+            DispatchQueue.main.async {
+                self?.movies = moviesFromApiService
+                self?.repository?.save(object: moviesFromApiService)
+                self?.updateViewData?()
+            }
         }
     }
  }

@@ -29,8 +29,8 @@ final class MovieViewController: UIViewController {
         moviesTableView.delegate = self
         moviesTableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "myCell")
         setView()
-        updateViewController()
         viewModel.getData()
+        updateViewController()
     }
 
     // MARK: - Private Methods
@@ -45,7 +45,7 @@ final class MovieViewController: UIViewController {
     }
 
     private func updateViewController() {
-        viewModel.updateView = {
+        viewModel.updateViewData = {
             DispatchQueue.main.async {
                 self.moviesTableView.reloadData()
             }
@@ -66,7 +66,8 @@ final class MovieViewController: UIViewController {
 
 extension MovieViewController: UITableViewDataSource {
     func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
-        viewModel.movies.count
+        guard let movies = viewModel.movies else { return 0 }
+        return movies.count
     }
 
     func tableView(_: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,7 +77,7 @@ extension MovieViewController: UITableViewDataSource {
         ) as? MovieTableViewCell
         else { return UITableViewCell() }
         cell.backgroundColor = .black
-        let moviesList = viewModel.movies
+        guard let moviesList = viewModel.movies else { return UITableViewCell() }
         cell.configCell(movie: moviesList[indexPath.row])
         return cell
     }
@@ -86,16 +87,13 @@ extension MovieViewController: UITableViewDataSource {
 
 extension MovieViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
+//        UITableView.automaticDimension
         300
     }
 
     func tableView(_: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let withDetailViewController = MovieDetailViewController()
-//        let detailedViewModel = MovieDetailViewModel(movieID: viewModel.movies[indexPath.row].id)
-
-        let movedID = viewModel.movies[indexPath.row].id
-        toDetailScreen?(movedID)
-//        withDetailViewController.setupViewModel(viewModel: detailedViewModel)
-//        navigationController?.pushViewController(withDetailViewController, animated: true)
+        let movedID = viewModel.movies?[indexPath.row].id
+        guard let movieID = movedID else { return }
+        toDetailScreen?(movieID)
     }
 }
