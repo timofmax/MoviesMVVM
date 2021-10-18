@@ -42,6 +42,7 @@ final class MovieViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes = attributes
         title = "Movies"
         createTableView()
+        moviesTableView.accessibilityIdentifier = "MainTableView"
     }
 
     private func updateViewController() {

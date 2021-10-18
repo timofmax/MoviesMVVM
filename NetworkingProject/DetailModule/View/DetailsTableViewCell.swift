@@ -28,6 +28,7 @@ final class DetailsTableViewCell: UITableViewCell {
         createTitle()
         createPosterConstraint()
         createTitleContstraint()
+        self.accessibilityIdentifier = "MovieDetalTableViewCell"
     }
 
     private func createTitle() {

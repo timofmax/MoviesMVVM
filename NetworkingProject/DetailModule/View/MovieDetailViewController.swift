@@ -53,6 +53,7 @@ final class MovieDetailViewController: UIViewController {
     private func setView() {
         detailsTableView.delegate = self
         detailsTableView.dataSource = self
+        detailsTableView.accessibilityIdentifier = "DetailTableView"
         detailsTableView.register(DetailsTableViewCell.self, forCellReuseIdentifier: "detailID")
         detailsTableView.register(SpecificDetailsTableViewCell.self, forCellReuseIdentifier: "specificID")
         view.backgroundColor = .black

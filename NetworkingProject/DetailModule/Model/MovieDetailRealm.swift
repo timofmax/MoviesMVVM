@@ -8,7 +8,6 @@ import RealmSwift
 
 
 @objc final class MovieDetailRealm: Object, Codable {
-    // MARK: - Public Properties
 
     /// id фильма
     @objc dynamic var id: Int = Int()

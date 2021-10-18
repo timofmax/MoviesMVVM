@@ -35,6 +35,7 @@ final class MovieTableViewCell: UITableViewCell {
         createOverviewConstraint()
         createTitleConstraint()
         createRatingConstraint()
+        
     }
     
     private func createPoster() {
@@ -115,5 +116,6 @@ final class MovieTableViewCell: UITableViewCell {
         self.overviewLabel.text = movie.overview
         self.titleMovieLabel.text = movie.title
         self.ratingLabel.text = "\(movie.voteAverage) ⭐️"
+        self.accessibilityIdentifier = "MovieTableViewCell"
     }
 }
