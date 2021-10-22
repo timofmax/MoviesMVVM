@@ -62,8 +62,8 @@
 /* Begin PBXFileReference section */
 		05001825271C8F2C00F3A179 /* MoviesVewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesVewModelTest.swift; sourceTree = "<group>"; };
 		0518730F2716081100F5F339 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
-		052858B12722F73E00318511 /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesTest.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesTest.xctest"; sourceTree = "<absolute>"; };
-		052858B22722F73E00318511 /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesUITests.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesUITests.xctest"; sourceTree = "<absolute>"; };
+		052858DA272305F900318511 /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		052858DB272305F900318511 /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0534CA2D2714F2BB009A0654 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		054AC50F2717156A009F3883 /* ImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIService.swift; sourceTree = "<group>"; };
 		057B42292719B42E00627FDB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -128,43 +128,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05087FBF26B0B993004B837F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				05A64C7026B3279E005CD0BF /* MovieDetailViewController.swift */,
-				05A64C7526B33085005CD0BF /* DetailsTableViewCell.swift */,
-				05A64C7826B33C6E005CD0BF /* SpecificDetailsTableViewCell.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		0518730C271607D700F5F339 /* DetailModule */ = {
-			isa = PBXGroup;
-			children = (
-				0518730E271607EB00F5F339 /* ViewModel */,
-				05087FBF26B0B993004B837F /* View */,
-				0589836F26B095F600BF8BE1 /* Model */,
-			);
-			path = DetailModule;
-			sourceTree = "<group>";
-		};
-		0518730E271607EB00F5F339 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				0518730F2716081100F5F339 /* MovieDetailViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		051873122716089400F5F339 /* ServiceLayer */ = {
-			isa = PBXGroup;
-			children = (
-				057B42282719B41000627FDB /* DataStorage */,
-				057B4237271A25CC00627FDB /* ImageManager */,
-			);
-			path = ServiceLayer;
-			sourceTree = "<group>";
-		};
 		052858B6272301B200318511 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +140,8 @@
 		052858B7272301ED00318511 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				052858BC272302C100318511 /* Utils */,
+				052858E32723064E00318511 /* MoviesScene */,
+				052858E42723065C00318511 /* MovieDetails */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -213,21 +177,6 @@
 			children = (
 			);
 			path = Interfaces;
-			sourceTree = "<group>";
-		};
-		052858BC272302C100318511 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				052858BD272302C700318511 /* Extensions */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
-		052858BD272302C700318511 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		052858C92723038600318511 /* Data */ = {
@@ -268,17 +217,33 @@
 			path = PersistentStorages;
 			sourceTree = "<group>";
 		};
-		0534CA272714F1D0009A0654 /* MainModule */ = {
+		052858E32723064E00318511 /* MoviesScene */ = {
 			isa = PBXGroup;
 			children = (
-				0534CA2B2714F1FA009A0654 /* ViewModel */,
-				0534CA282714F1E9009A0654 /* View */,
-				0534CA2A2714F1F2009A0654 /* Model */,
+				052858E52723067C00318511 /* ViewModel */,
+				052858E62723069000318511 /* View */,
 			);
-			path = MainModule;
+			path = MoviesScene;
 			sourceTree = "<group>";
 		};
-		0534CA282714F1E9009A0654 /* View */ = {
+		052858E42723065C00318511 /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+				052858E7272306AE00318511 /* ViewModel */,
+				052858E8272306B400318511 /* View */,
+			);
+			path = MovieDetails;
+			sourceTree = "<group>";
+		};
+		052858E52723067C00318511 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0534CA2D2714F2BB009A0654 /* MainScreenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		052858E62723069000318511 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				05B9E81226AF18CC00105F8C /* MovieViewController.swift */,
@@ -288,33 +253,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		0534CA2A2714F1F2009A0654 /* Model */ = {
+		052858E7272306AE00318511 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				0518730F2716081100F5F339 /* MovieDetailViewModel.swift */,
 			);
-			path = Model;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		0534CA2B2714F1FA009A0654 /* ViewModel */ = {
+		052858E8272306B400318511 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0534CA2D2714F2BB009A0654 /* MainScreenViewModel.swift */,
+				05A64C7026B3279E005CD0BF /* MovieDetailViewController.swift */,
+				05A64C7526B33085005CD0BF /* DetailsTableViewCell.swift */,
+				05A64C7826B33C6E005CD0BF /* SpecificDetailsTableViewCell.swift */,
 			);
-			name = ViewModel;
-			sourceTree = "<group>";
-		};
-		057B42282719B41000627FDB /* DataStorage */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = DataStorage;
-			sourceTree = "<group>";
-		};
-		057B4237271A25CC00627FDB /* ImageManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ImageManager;
+			path = View;
 			sourceTree = "<group>";
 		};
 		057B423E271A275800627FDB /* Helpers */ = {
@@ -322,13 +276,6 @@
 			children = (
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		0589836F26B095F600BF8BE1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		05B9E80226AF18CC00105F8C = {
@@ -343,6 +290,8 @@
 				05BED86E271CCDFC0078E9F5 /* MoviesUITests */,
 				05E247D12718A69B00956E89 /* MoviesTest */,
 				05BED881271CCE340078E9F5 /* MoviesUITests */,
+				052858DA272305F900318511 /* MoviesTest.xctest */,
+				052858DB272305F900318511 /* MoviesUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -351,9 +300,6 @@
 			children = (
 				05CE07E427186ABA00B1ACB4 /* Assembly.swift */,
 				05CE07EA271887D900B1ACB4 /* Coordinator */,
-				051873122716089400F5F339 /* ServiceLayer */,
-				0534CA272714F1D0009A0654 /* MainModule */,
-				0518730C271607D700F5F339 /* DetailModule */,
 				05B9E81426AF18CC00105F8C /* Main.storyboard */,
 				057B423E271A275800627FDB /* Helpers */,
 				05B9E81726AF18CF00105F8C /* Assets.xcassets */,
@@ -452,7 +398,7 @@
 			);
 			name = MoviesUITests;
 			productName = MoviesUITests;
-			productReference = 052858B22722F73E00318511 /* MoviesUITests.xctest */;
+			productReference = 052858DB272305F900318511 /* MoviesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		05E247CF2718A69B00956E89 /* MoviesTest */ = {
@@ -470,7 +416,7 @@
 			);
 			name = MoviesTest;
 			productName = MoviesTest;
-			productReference = 052858B12722F73E00318511 /* MoviesTest.xctest */;
+			productReference = 052858DA272305F900318511 /* MoviesTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
