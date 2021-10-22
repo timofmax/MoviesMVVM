@@ -267,6 +267,16 @@
 			path = Flows;
 			sourceTree = "<group>";
 		};
+		052858F4272309C800318511 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				05B9E81426AF18CC00105F8C /* Main.storyboard */,
+				05B9E81726AF18CF00105F8C /* Assets.xcassets */,
+				05B9E81926AF18CF00105F8C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		05B9E80226AF18CC00105F8C = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +286,7 @@
 				052858C92723038600318511 /* Data */,
 				05B9E80D26AF18CC00105F8C /* NetworkingProject */,
 				057B4245271A28B400627FDB /* NetworkingProject.app */,
+				052858F4272309C800318511 /* Resources */,
 				05BED86E271CCDFC0078E9F5 /* MoviesUITests */,
 				05E247D12718A69B00956E89 /* MoviesTest */,
 				05BED881271CCE340078E9F5 /* MoviesUITests */,
@@ -285,9 +296,6 @@
 		05B9E80D26AF18CC00105F8C /* NetworkingProject */ = {
 			isa = PBXGroup;
 			children = (
-				05B9E81426AF18CC00105F8C /* Main.storyboard */,
-				05B9E81726AF18CF00105F8C /* Assets.xcassets */,
-				05B9E81926AF18CF00105F8C /* LaunchScreen.storyboard */,
 				05B9E81C26AF18CF00105F8C /* Info.plist */,
 			);
 			path = NetworkingProject;
