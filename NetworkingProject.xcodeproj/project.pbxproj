@@ -64,6 +64,8 @@
 		0518730F2716081100F5F339 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		052858DA272305F900318511 /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesTest.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesTest.xctest"; sourceTree = "<absolute>"; };
 		052858DB272305F900318511 /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesUITests.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesUITests.xctest"; sourceTree = "<absolute>"; };
+		052858FE27230A7C00318511 /* NetworkingProject.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = NetworkingProject.app; path = "../../../Library/Developer/Xcode/DerivedData/NetworkingProject-hdqfzerotcnmckboahhkwtpboyrz/Build/Products/Debug-iphonesimulator/NetworkingProject.app"; sourceTree = "<group>"; };
+		052858FF27230A8100318511 /* NetworkingProject.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = NetworkingProject.app; path = "../../../Library/Developer/Xcode/DerivedData/NetworkingProject-hdqfzerotcnmckboahhkwtpboyrz/Build/Products/Debug-iphonesimulator/NetworkingProject.app"; sourceTree = "<group>"; };
 		0534CA2D2714F2BB009A0654 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		054AC50F2717156A009F3883 /* ImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIService.swift; sourceTree = "<group>"; };
 		057B42292719B42E00627FDB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		052858F4272309C800318511 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05B9E81C26AF18CF00105F8C /* Info.plist */,
 				05B9E81426AF18CC00105F8C /* Main.storyboard */,
 				05B9E81726AF18CF00105F8C /* Assets.xcassets */,
 				05B9E81926AF18CF00105F8C /* LaunchScreen.storyboard */,
@@ -284,21 +287,12 @@
 				052858B7272301ED00318511 /* Presentation */,
 				052858B82723023900318511 /* Domain */,
 				052858C92723038600318511 /* Data */,
-				05B9E80D26AF18CC00105F8C /* NetworkingProject */,
 				057B4245271A28B400627FDB /* NetworkingProject.app */,
 				052858F4272309C800318511 /* Resources */,
 				05BED86E271CCDFC0078E9F5 /* MoviesUITests */,
 				05E247D12718A69B00956E89 /* MoviesTest */,
 				05BED881271CCE340078E9F5 /* MoviesUITests */,
 			);
-			sourceTree = "<group>";
-		};
-		05B9E80D26AF18CC00105F8C /* NetworkingProject */ = {
-			isa = PBXGroup;
-			children = (
-				05B9E81C26AF18CF00105F8C /* Info.plist */,
-			);
-			path = NetworkingProject;
 			sourceTree = "<group>";
 		};
 		05BED86E271CCDFC0078E9F5 /* MoviesUITests */ = {
@@ -313,6 +307,8 @@
 		05BED881271CCE340078E9F5 /* MoviesUITests */ = {
 			isa = PBXGroup;
 			children = (
+				052858FE27230A7C00318511 /* NetworkingProject.app */,
+				052858FF27230A8100318511 /* NetworkingProject.app */,
 				05BED882271CCE340078E9F5 /* MoviesUITests.swift */,
 				05BED884271CCE340078E9F5 /* Info.plist */,
 			);
@@ -721,7 +717,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8723YN376G;
-				INFOPLIST_FILE = NetworkingProject/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -740,7 +736,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8723YN376G;
-				INFOPLIST_FILE = NetworkingProject/Info.plist;
+				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
