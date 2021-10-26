@@ -1,5 +1,5 @@
 // AppDelegate.swift
-// Copyright © RoadMap. All rights reserved.
+// Copyright © timofmax. All rights reserved.
 
 import UIKit
 
