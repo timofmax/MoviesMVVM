@@ -5,7 +5,6 @@ import UIKit
 /// Here is own MovieTableViewCell  - separtated for style and customization.
 final class MovieTableViewCell: UITableViewCell {
     // MARK: - Public Properties
-    
     var logoMovieImageView = UIImageView()
     var posterImageView = UIImageView()
     var titleMovieLabel = UILabel()
@@ -14,7 +13,6 @@ final class MovieTableViewCell: UITableViewCell {
     var backView = UIView()
     
     // MARK: - Initinilizers
-    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setView()
@@ -23,9 +21,8 @@ final class MovieTableViewCell: UITableViewCell {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     // MARK: - Private Methods
-    
     private func setView() {
         createPoster()
         createOverview()
