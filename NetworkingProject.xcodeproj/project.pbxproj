@@ -62,10 +62,10 @@
 /* Begin PBXFileReference section */
 		05001825271C8F2C00F3A179 /* MoviesVewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesVewModelTest.swift; sourceTree = "<group>"; };
 		0518730F2716081100F5F339 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
-		052858DA272305F900318511 /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesTest.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesTest.xctest"; sourceTree = "<absolute>"; };
-		052858DB272305F900318511 /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesUITests.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesUITests.xctest"; sourceTree = "<absolute>"; };
 		052858FE27230A7C00318511 /* NetworkingProject.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = NetworkingProject.app; path = "../../../Library/Developer/Xcode/DerivedData/NetworkingProject-hdqfzerotcnmckboahhkwtpboyrz/Build/Products/Debug-iphonesimulator/NetworkingProject.app"; sourceTree = "<group>"; };
 		052858FF27230A8100318511 /* NetworkingProject.app */ = {isa = PBXFileReference; lastKnownFileType = wrapper.application; name = NetworkingProject.app; path = "../../../Library/Developer/Xcode/DerivedData/NetworkingProject-hdqfzerotcnmckboahhkwtpboyrz/Build/Products/Debug-iphonesimulator/NetworkingProject.app"; sourceTree = "<group>"; };
+		052859082728406300318511 /* MoviesTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesTest.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesTest.xctest"; sourceTree = "<absolute>"; };
+		052859092728406300318511 /* MoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MoviesUITests.xctest; path = "/Users/lucky/UIKit_DZ/MoviesMVVM/build/Debug-iphoneos/MoviesUITests.xctest"; sourceTree = "<absolute>"; };
 		0534CA2D2714F2BB009A0654 /* MainScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenViewModel.swift; sourceTree = "<group>"; };
 		054AC50F2717156A009F3883 /* ImageAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIService.swift; sourceTree = "<group>"; };
 		057B42292719B42E00627FDB /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
@@ -376,7 +376,7 @@
 			);
 			name = MoviesUITests;
 			productName = MoviesUITests;
-			productReference = 052858DB272305F900318511 /* MoviesUITests.xctest */;
+			productReference = 052859092728406300318511 /* MoviesUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		05E247CF2718A69B00956E89 /* MoviesTest */ = {
@@ -394,7 +394,7 @@
 			);
 			name = MoviesTest;
 			productName = MoviesTest;
-			productReference = 052858DA272305F900318511 /* MoviesTest.xctest */;
+			productReference = 052859082728406300318511 /* MoviesTest.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
