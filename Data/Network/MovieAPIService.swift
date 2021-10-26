@@ -11,7 +11,6 @@ protocol MovieAPIServiceProtocol {
 
 /// MovieAPIService
 final class MovieAPIService: MovieAPIServiceProtocol {
-    
     func fetMovies(complition: @escaping (([MovieRealm])->())) {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
