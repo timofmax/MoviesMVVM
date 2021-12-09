@@ -1,5 +1,5 @@
 // MenuViewController.swift
-// Copyright © RoadMap. All rights reserved.
+// Copyright © timofmax. All rights reserved.
 
 import UIKit
 
@@ -88,7 +88,6 @@ extension MovieViewController: UITableViewDataSource {
 
 extension MovieViewController: UITableViewDelegate {
     func tableView(_: UITableView, heightForRowAt _: IndexPath) -> CGFloat {
-//        UITableView.automaticDimension
         300
     }
 
